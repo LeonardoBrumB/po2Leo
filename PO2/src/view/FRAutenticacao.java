@@ -5,6 +5,8 @@
  */
 package view;
 
+import controller.UsuarioController;
+import utils.Utils;
 import javax.swing.JOptionPane;
 
 /**
@@ -39,7 +41,7 @@ public class FRAutenticacao extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 0, 255));
 
         lbLogin.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lbLogin.setText("Login:");
@@ -146,11 +148,25 @@ public class FRAutenticacao extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O Campo 'login' está em branco");
             return;
         }
-        
+
         if (new String(txtSenha.getPassword()).equals("")) {
             JOptionPane.showMessageDialog(null, "O Campo 'senha' está em branco");
             return;
         }
+
+        //autenticar
+        String senha = new String(txtSenha.getPassword());
+        
+        String hash = utils.Utils.calcularMD5(senha);
+        
+        UsuarioController controller = new UsuarioController();
+        if (controller.autenticar(txtLogin.getText(), hash) == true){
+            //logar
+            this.dispose();
+            new FRMenu().setVisible(true);
+            
+        }
+
     }//GEN-LAST:event_btEntrarMouseClicked
 
     /**
