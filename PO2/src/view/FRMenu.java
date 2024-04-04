@@ -39,6 +39,7 @@ public class FRMenu extends javax.swing.JFrame {
         miConUsuario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("menu");
 
         jPanel1.setBackground(new java.awt.Color(204, 51, 255));
 
@@ -62,7 +63,13 @@ public class FRMenu extends javax.swing.JFrame {
         );
 
         miCad.setText("Cadastro");
+        miCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miCadActionPerformed(evt);
+            }
+        });
 
+        miCadUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1564534_customer_man_user_account_profile_icon (1).png"))); // NOI18N
         miCadUsuario.setText("Usuário");
         miCadUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +81,7 @@ public class FRMenu extends javax.swing.JFrame {
         jMenuItem2.setText("????");
         miCad.add(jMenuItem2);
 
+        miCadSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/7853741_logout_kashifarif_exit_out_close_icon.png"))); // NOI18N
         miCadSair.setText("Sair");
         miCadSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +94,7 @@ public class FRMenu extends javax.swing.JFrame {
 
         jMenu2.setText("Conexão");
 
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1564534_customer_man_user_account_profile_icon (1).png"))); // NOI18N
         jMenuItem4.setText("Usuário");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,8 +142,12 @@ public class FRMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_miConUsuarioActionPerformed
 
     private void miCadUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadUsuarioActionPerformed
-        // TODO add your handling code here:
+        new FRCadUsuario(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miCadUsuarioActionPerformed
+
+    private void miCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadActionPerformed
+        
+    }//GEN-LAST:event_miCadActionPerformed
 
     /**
      * @param args the command line arguments
