@@ -40,8 +40,9 @@ public class FRAutenticacao extends javax.swing.JFrame {
         imgPadlock = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("autenticacao");
 
-        jPanel1.setBackground(new java.awt.Color(204, 0, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 51, 255));
 
         lbLogin.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lbLogin.setText("Login:");
