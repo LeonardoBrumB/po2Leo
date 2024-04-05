@@ -5,10 +5,13 @@
         <group>
             <file>file:/C:/Users/aluno.saolucas/Documents/GitHub/po2Leo/PO2/src/model/UsuarioDAO.java</file>
             <file>file:/C:/Users/aluno.saolucas/Documents/GitHub/po2Leo/PO2/src/model/GerenciadorConexao.java</file>
+            <file>file:/C:/Users/aluno.saolucas/Documents/GitHub/po2Leo/PO2/src/model/Usuario.java</file>
             <file>file:/C:/Users/aluno.saolucas/Documents/GitHub/po2Leo/PO2/src/view/FRCadUsuario.java</file>
+            <file>file:/C:/Users/aluno.saolucas/Documents/GitHub/po2Leo/PO2/src/view/FRConsUsuario.java</file>
             <file>file:/C:/Users/aluno.saolucas/Documents/GitHub/po2Leo/PO2/src/view/FRMenu.java</file>
-            <file>file:/C:/Users/aluno.saolucas/Documents/GitHub/po2Leo/PO2/src/view/FRAutenticacao.java</file>
+            <file>file:/C:/Users/aluno.saolucas/Documents/GitHub/po2Leo/PO2/src/utils/Utils.java</file>
             <file>file:/C:/Users/aluno.saolucas/Documents/GitHub/po2Leo/PO2/src/controller/UsuarioController.java</file>
+            <file>file:/C:/Users/aluno.saolucas/Documents/GitHub/po2Leo/PO2/src/view/FRAutenticacao.java</file>
         </group>
     </open-files>
 </project-private>

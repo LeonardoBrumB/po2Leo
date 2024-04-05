@@ -2,6 +2,10 @@ package utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
 
 public class Utils {
 
@@ -24,5 +28,17 @@ public class Utils {
             System.err.println("Algoritmo MD5 não encontrado");
         }
         return hashMD5;
+    }
+
+    public static Date converterStringToDate(String texto) {
+        SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy");
+        Date data = null;
+
+        try {
+            data = f.parse(texto);
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao converter a data");
+        }
+        return data;
     }
 }
