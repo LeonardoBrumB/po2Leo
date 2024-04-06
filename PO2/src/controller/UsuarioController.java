@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.List;
 import javax.swing.JOptionPane;
 import model.Usuario;
 import model.UsuarioDAO;
@@ -29,5 +30,8 @@ public class UsuarioController {
             JOptionPane.showMessageDialog(null,"Usuário não cadastrado");
             return false;
         }
+    }
+    public List<Usuario> readForDesc(int tipo, String desc){
+        return usuarioDAO.readForDesc(tipo, desc);
     }
 }

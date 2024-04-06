@@ -35,8 +35,8 @@ public class FRMenu extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         miCadSair = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
         miConUsuario = new javax.swing.JMenuItem();
+        minsei = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("menu");
@@ -94,22 +94,27 @@ public class FRMenu extends javax.swing.JFrame {
 
         jMenu2.setText("Conexão");
 
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1564534_customer_man_user_account_profile_icon (1).png"))); // NOI18N
-        jMenuItem4.setText("Usuário");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+        miConUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1564534_customer_man_user_account_profile_icon (1).png"))); // NOI18N
+        miConUsuario.setText("Usuário");
+        miConUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miConUsuarioMouseClicked(evt);
             }
         });
-        jMenu2.add(jMenuItem4);
-
-        miConUsuario.setText("???");
         miConUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 miConUsuarioActionPerformed(evt);
             }
         });
         jMenu2.add(miConUsuario);
+
+        minsei.setText("???");
+        minsei.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minseiActionPerformed(evt);
+            }
+        });
+        jMenu2.add(minsei);
 
         jMenuBar1.add(jMenu2);
 
@@ -133,13 +138,13 @@ public class FRMenu extends javax.swing.JFrame {
      this.dispose();
     }//GEN-LAST:event_miCadSairActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
     private void miConUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miConUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_miConUsuarioActionPerformed
+
+    private void minseiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minseiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_minseiActionPerformed
 
     private void miCadUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadUsuarioActionPerformed
         new FRCadUsuario(this, rootPaneCheckingEnabled).setVisible(true);
@@ -148,6 +153,10 @@ public class FRMenu extends javax.swing.JFrame {
     private void miCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadActionPerformed
         
     }//GEN-LAST:event_miCadActionPerformed
+
+    private void miConUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miConUsuarioMouseClicked
+        new FRConsUsuario(this, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miConUsuarioMouseClicked
 
     /**
      * @param args the command line arguments
@@ -189,11 +198,11 @@ public class FRMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu miCad;
     private javax.swing.JMenuItem miCadSair;
     private javax.swing.JMenuItem miCadUsuario;
     private javax.swing.JMenuItem miConUsuario;
+    private javax.swing.JMenuItem minsei;
     // End of variables declaration//GEN-END:variables
 }

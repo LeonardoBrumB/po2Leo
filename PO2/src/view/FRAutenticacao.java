@@ -6,6 +6,7 @@
 package view;
 
 import controller.UsuarioController;
+import java.awt.event.KeyEvent;
 import utils.Utils;
 import javax.swing.JOptionPane;
 
@@ -55,10 +56,20 @@ public class FRAutenticacao extends javax.swing.JFrame {
                 txtLoginActionPerformed(evt);
             }
         });
+        txtLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtLoginKeyPressed(evt);
+            }
+        });
 
         txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSenhaActionPerformed(evt);
+            }
+        });
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
             }
         });
 
@@ -144,7 +155,22 @@ public class FRAutenticacao extends javax.swing.JFrame {
     }//GEN-LAST:event_btEntrarActionPerformed
 
     private void btEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEntrarMouseClicked
+        logar();
+    }//GEN-LAST:event_btEntrarMouseClicked
 
+    private void txtLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLoginKeyPressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            txtLogin.requestFocus();
+        } 
+    }//GEN-LAST:event_txtLoginKeyPressed
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            logar();
+        }
+    }//GEN-LAST:event_txtSenhaKeyPressed
+
+    private void logar() {
         if (txtLogin.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "O Campo 'login' está em branco");
             return;
@@ -157,18 +183,17 @@ public class FRAutenticacao extends javax.swing.JFrame {
 
         //autenticar
         String senha = new String(txtSenha.getPassword());
-        
+
         String hash = utils.Utils.calcularMD5(senha);
-        
+
         UsuarioController controller = new UsuarioController();
-        if (controller.autenticar(txtLogin.getText(), hash) == true){
+        if (controller.autenticar(txtLogin.getText(), hash) == true) {
             //logar
             this.dispose();
             new FRMenu().setVisible(true);
-            
-        }
 
-    }//GEN-LAST:event_btEntrarMouseClicked
+        }
+    }
 
     /**
      * @param args the command line arguments

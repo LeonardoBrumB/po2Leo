@@ -6,6 +6,7 @@
 package view;
 
 import controller.UsuarioController;
+import java.awt.event.KeyEvent;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import model.Usuario;
@@ -70,6 +71,11 @@ public class FRCadUsuario extends javax.swing.JDialog {
                 txtNomeActionPerformed(evt);
             }
         });
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNomeKeyPressed(evt);
+            }
+        });
 
         lbEmail.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lbEmail.setText("Email:");
@@ -79,12 +85,23 @@ public class FRCadUsuario extends javax.swing.JDialog {
                 txtEmailActionPerformed(evt);
             }
         });
+        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmailKeyPressed(evt);
+            }
+        });
 
         lbSenha.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lbSenha.setText("Senha:");
 
         lbDataNasc.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lbDataNasc.setText("Data de Nascimento:");
+
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
+            }
+        });
 
         cbAtivo.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         cbAtivo.setText("Ativo");
@@ -95,6 +112,11 @@ public class FRCadUsuario extends javax.swing.JDialog {
         });
 
         ftxtDataNasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM))));
+        ftxtDataNasc.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ftxtDataNascKeyPressed(evt);
+            }
+        });
 
         btSalvar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/326688_floppy_save_guardar_icon (1).png"))); // NOI18N
@@ -107,6 +129,11 @@ public class FRCadUsuario extends javax.swing.JDialog {
         btSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSalvarActionPerformed(evt);
+            }
+        });
+        btSalvar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btSalvarKeyPressed(evt);
             }
         });
 
@@ -126,6 +153,12 @@ public class FRCadUsuario extends javax.swing.JDialog {
 
         lbConfSenha.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lbConfSenha.setText("Confirmar senha:");
+
+        txtConfSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtConfSenhaKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -264,6 +297,42 @@ public class FRCadUsuario extends javax.swing.JDialog {
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btSalvarActionPerformed
+
+    private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            txtNome.requestFocus();
+        } 
+    }//GEN-LAST:event_txtNomeKeyPressed
+
+    private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            txtEmail.requestFocus();
+        } 
+    }//GEN-LAST:event_txtEmailKeyPressed
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            txtSenha.requestFocus();
+        } 
+    }//GEN-LAST:event_txtSenhaKeyPressed
+
+    private void txtConfSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfSenhaKeyPressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            txtConfSenha.requestFocus();
+        } 
+    }//GEN-LAST:event_txtConfSenhaKeyPressed
+
+    private void ftxtDataNascKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ftxtDataNascKeyPressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            ftxtDataNasc.requestFocus();
+        } 
+    }//GEN-LAST:event_ftxtDataNascKeyPressed
+
+    private void btSalvarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btSalvarKeyPressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            btSalvarMouseClicked(null);
+        } 
+    }//GEN-LAST:event_btSalvarKeyPressed
 
     private boolean verificarCampos() {
         if (txtNome.getText().equals("")) {
