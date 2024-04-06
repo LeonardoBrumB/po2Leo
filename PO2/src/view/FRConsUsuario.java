@@ -8,6 +8,7 @@ package view;
 import controller.UsuarioController;
 import javax.swing.table.DefaultTableModel;
 import model.Usuario;
+import utils.Utils;
 
 /**
  *
@@ -164,7 +165,7 @@ public class FRConsUsuario extends javax.swing.JDialog {
             Object[] linha = {usu.getPkUsuario()
             , usu.getNome()
             , usu.getEmail()
-            , usu.getDataNasc()
+            , Utils.converterDateToString(usu.getDataNasc())
             , usu.ativoToString()};
             modelo.addRow(linha);
         }
