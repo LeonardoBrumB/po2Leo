@@ -23,26 +23,35 @@ public class UsuarioController {
             return false;
         }
     }
-    public boolean adicionarUsuario(Usuario u){
-        if(usuarioDAO.adicionarUsuario(u)){
+
+    public boolean adicionarUsuario(Usuario u) {
+        if (usuarioDAO.adicionarUsuario(u)) {
             return true;
-        }else{
-            JOptionPane.showMessageDialog(null,"Usuário não cadastrado");
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuário não cadastrado");
             return false;
         }
     }
-    public List<Usuario> readForDesc(int tipo, String desc){
+
+    public List<Usuario> readForDesc(int tipo, String desc) {
         return usuarioDAO.readForDesc(tipo, desc);
     }
-    
-    public Usuario readForPk(long pk){
+
+    public Usuario readForPk(long pk) {
         Usuario usu = usuarioDAO.readForPk(pk);
-        if(usu == null){
-            JOptionPane.showMessageDialog(null,"Usuário não cadastrado");
+        if (usu == null) {
+            JOptionPane.showMessageDialog(null, "Usuário não cadastrado");
             return null;
         }
         return usu;
     }
-    
-    
+
+    public boolean alterarUsuario(Usuario u) {
+        if (usuarioDAO.alterarUsuario(u)) {
+            return true;
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuário não pôde ser editado");
+            return false;
+        }
+    }
 }
