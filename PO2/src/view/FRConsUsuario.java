@@ -203,7 +203,7 @@ public class FRConsUsuario extends javax.swing.JDialog {
         if(tbUsuario.getSelectedRow() != -1){
             int pk = Integer.parseInt(tbUsuario.getValueAt(tbUsuario.getSelectedRow(), 0).toString());
             
-            //Criar tela e carregar is dados do usuário
+            //Criar tela e carregar os dados do usuário
             FRUPDUsuario telaUPD = new FRUPDUsuario(null, rootPaneCheckingEnabled);
             telaUPD.setPkUsuario(pk);
             telaUPD.carregarUsuario();

@@ -130,7 +130,7 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         });
 
         txtConfSenha.setEditable(false);
-        txtConfSenha.setBackground(new java.awt.Color(204, 204, 204));
+        txtConfSenha.setBackground(new java.awt.Color(124, 124, 124));
         txtConfSenha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtConfSenhaKeyPressed(evt);
@@ -158,7 +158,7 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         lbDataNasc.setText("Data de Nascimento:");
 
         txtSenha.setEditable(false);
-        txtSenha.setBackground(new java.awt.Color(204, 204, 204));
+        txtSenha.setBackground(new java.awt.Color(125, 125, 125));
         txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtSenhaKeyPressed(evt);
@@ -203,7 +203,7 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         lbCodigo.setText("Código:");
 
         txtCodigo.setEditable(false);
-        txtCodigo.setBackground(new java.awt.Color(204, 204, 204));
+        txtCodigo.setBackground(new java.awt.Color(124, 124, 124));
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoActionPerformed(evt);
@@ -282,8 +282,8 @@ public class FRUPDUsuario extends javax.swing.JDialog {
                 .addContainerGap(15, Short.MAX_VALUE)
                 .addComponent(lbTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbCodigo)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbCodigo, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lbNome)
@@ -396,18 +396,23 @@ public class FRUPDUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_ftxtDataNascKeyPressed
 
     private void btSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSalvarMouseClicked
-        //verificar
         if (verificarCampos() == false) {
             return;
         }
 
-        //salvar
         Usuario usu = new Usuario();
         usu.setNome(txtNome.getText());
         usu.setEmail(txtEmail.getText());
 
-        String senha = new String(txtSenha.getPassword());
-        senha = Utils.calcularMD5(senha);
+        String senha = "";
+        if (txtSenha.isEditable()) {
+            senha = new String(txtSenha.getPassword());
+            senha = Utils.calcularMD5(senha);
+        } else {
+            senha = new String(txtSenha.getPassword());
+
+        }
+        
         usu.setSenha(senha);
         usu.setAtivo(cbAtivo.isSelected());
 
@@ -415,7 +420,7 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         usu.setDataNasc(data);
 
         UsuarioController controller = new UsuarioController();
-        if (controller.adicionarUsuario(usu)) {
+        if (controller.alterarUsuario(usu)) {
             this.dispose();
         }
     }//GEN-LAST:event_btSalvarMouseClicked
@@ -456,7 +461,7 @@ public class FRUPDUsuario extends javax.swing.JDialog {
             txtConfSenha.setEditable(false);
             txtSenha.setBackground(Color.gray);
             txtConfSenha.setBackground(Color.gray);
-            btAlterarSenha.setText("Cancelar alteração");
+            btAlterarSenha.setText("Alterar senha");
 
             txtSenha.setText(getSenhaUsuario());
             txtConfSenha.setText(getSenhaUsuario());
