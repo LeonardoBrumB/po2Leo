@@ -42,7 +42,7 @@ public class Utils {
         return data;
     }
     public static String converterDateToString(Date data){
-        SimpleDateFormat formato = new SimpleDateFormat();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         String texto = "";
         
         try{

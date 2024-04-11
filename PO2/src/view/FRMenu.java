@@ -37,9 +37,13 @@ public class FRMenu extends javax.swing.JFrame {
         mConexao = new javax.swing.JMenu();
         miConsUsuario = new javax.swing.JMenuItem();
         minsei = new javax.swing.JMenuItem();
+        mAjuda = new javax.swing.JMenu();
+        miSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("menu");
+        setLocation(new java.awt.Point(0, 0));
+        setSize(new java.awt.Dimension(1920, 1080));
 
         jPanel1.setBackground(new java.awt.Color(204, 51, 255));
 
@@ -50,14 +54,14 @@ public class FRMenu extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(231, 231, 231)
+                .addContainerGap(231, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addContainerGap(231, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(117, 117, 117)
+                .addContainerGap(117, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addContainerGap(109, Short.MAX_VALUE))
         );
@@ -118,6 +122,18 @@ public class FRMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(mConexao);
 
+        mAjuda.setText("Ajuda");
+
+        miSobre.setText("Sobre");
+        miSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSobreActionPerformed(evt);
+            }
+        });
+        mAjuda.add(miSobre);
+
+        jMenuBar1.add(mAjuda);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,6 +173,10 @@ public class FRMenu extends javax.swing.JFrame {
     private void mConexaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mConexaoMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_mConexaoMouseClicked
+
+    private void miSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSobreActionPerformed
+        new FRSobre(this, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miSobreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,11 +218,13 @@ public class FRMenu extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu mAjuda;
     private javax.swing.JMenu mConexao;
     private javax.swing.JMenu miCad;
     private javax.swing.JMenuItem miCadSair;
     private javax.swing.JMenuItem miCadUsuario;
     private javax.swing.JMenuItem miConsUsuario;
+    private javax.swing.JMenuItem miSobre;
     private javax.swing.JMenuItem minsei;
     // End of variables declaration//GEN-END:variables
 }

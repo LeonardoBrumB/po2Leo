@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -334,7 +334,15 @@ public class FRUPDUsuario extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btDeletarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDeletarMouseClicked
-
+        int resposta = JOptionPane.showConfirmDialog(null,"Deseja excluir o usuário?",
+                "Confirmação", JOptionPane.YES_NO_OPTION);
+        if(resposta == JOptionPane.YES_NO_OPTION){
+            UsuarioController controller = new UsuarioController();
+            if(controller.excluirUsuario(pkUsuario)){
+                this.dispose();
+            }
+        }
+        
     }//GEN-LAST:event_btDeletarMouseClicked
 
     private void btDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarActionPerformed
@@ -401,6 +409,7 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         }
 
         Usuario usu = new Usuario();
+        usu.setPkUsuario(pkUsuario);
         usu.setNome(txtNome.getText());
         usu.setEmail(txtEmail.getText());
 
