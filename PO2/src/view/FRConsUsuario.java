@@ -208,6 +208,8 @@ public class FRConsUsuario extends javax.swing.JDialog {
             telaUPD.setPkUsuario(pk);
             telaUPD.carregarUsuario();
             telaUPD.setVisible(true);
+            
+            pesquisar();
         }
     }//GEN-LAST:event_btAlterarMouseClicked
 

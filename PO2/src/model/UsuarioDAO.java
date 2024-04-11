@@ -120,7 +120,7 @@ public class UsuarioDAO {
         try {
             stmt = con.prepareStatement(sql);
             stmt.setLong(1, pk);
-            
+
             rs = stmt.executeQuery();
             if (rs.next()) {
                 usuario.setPkUsuario(rs.getLong("pkusuario"));
@@ -155,15 +155,37 @@ public class UsuarioDAO {
             stmt.setDate(4, new java.sql.Date(u.getDataNasc().getTime()));
             stmt.setBoolean(5, u.isAtivo());
             stmt.setLong(6, u.getPkUsuario());
+
             stmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Usuario " + u.getNome() + " inserido com sucesso!");
+            JOptionPane.showMessageDialog(null, "Usuario atualizado com sucesso!");
             return true;
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar: " + e.getMessage());
         } finally {
             gerenciador.closeConnection(stmt);
         }
         return false;
     }
 
+    public boolean excluirUsuario(int pkUsuario) {
+        String sql = "DELETE FROM tbusuario WHERE pkusuario = ?";
+
+        GerenciadorConexao gerenciador = new GerenciadorConexao();
+        Connection con = gerenciador.getConexao();
+        PreparedStatement stmt = null;
+
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, pkUsuario);
+
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Usuario excluído com sucesso!");
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao excluir: " + e.getMessage());
+        } finally {
+            gerenciador.closeConnection(stmt);
+        }
+        return false;
+    }
 }

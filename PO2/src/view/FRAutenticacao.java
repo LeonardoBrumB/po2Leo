@@ -21,6 +21,7 @@ public class FRAutenticacao extends javax.swing.JFrame {
      */
     public FRAutenticacao() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -159,9 +160,9 @@ public class FRAutenticacao extends javax.swing.JFrame {
     }//GEN-LAST:event_btEntrarMouseClicked
 
     private void txtLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLoginKeyPressed
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             txtLogin.requestFocus();
-        } 
+        }
     }//GEN-LAST:event_txtLoginKeyPressed
 
     private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
