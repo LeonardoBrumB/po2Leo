@@ -32,11 +32,9 @@ public class FRMenu extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         miCad = new javax.swing.JMenu();
         miCadUsuario = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         miCadSair = new javax.swing.JMenuItem();
         mConexao = new javax.swing.JMenu();
         miConsUsuario = new javax.swing.JMenuItem();
-        minsei = new javax.swing.JMenuItem();
         mAjuda = new javax.swing.JMenu();
         miSobre = new javax.swing.JMenuItem();
 
@@ -82,9 +80,6 @@ public class FRMenu extends javax.swing.JFrame {
         });
         miCad.add(miCadUsuario);
 
-        jMenuItem2.setText("????");
-        miCad.add(jMenuItem2);
-
         miCadSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/7853741_logout_kashifarif_exit_out_close_icon.png"))); // NOI18N
         miCadSair.setText("Sair");
         miCadSair.addActionListener(new java.awt.event.ActionListener() {
@@ -111,14 +106,6 @@ public class FRMenu extends javax.swing.JFrame {
             }
         });
         mConexao.add(miConsUsuario);
-
-        minsei.setText("???");
-        minsei.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minseiActionPerformed(evt);
-            }
-        });
-        mConexao.add(minsei);
 
         jMenuBar1.add(mConexao);
 
@@ -155,12 +142,8 @@ public class FRMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_miCadSairActionPerformed
 
     private void miConsUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miConsUsuarioActionPerformed
-        new FRConsUsuario(this, rootPaneCheckingEnabled).setVisible(true);
+        new FRLoginCons(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miConsUsuarioActionPerformed
-
-    private void minseiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minseiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_minseiActionPerformed
 
     private void miCadUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadUsuarioActionPerformed
         new FRCadUsuario(this, rootPaneCheckingEnabled).setVisible(true);
@@ -216,7 +199,6 @@ public class FRMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu mAjuda;
     private javax.swing.JMenu mConexao;
@@ -225,6 +207,5 @@ public class FRMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem miCadUsuario;
     private javax.swing.JMenuItem miConsUsuario;
     private javax.swing.JMenuItem miSobre;
-    private javax.swing.JMenuItem minsei;
     // End of variables declaration//GEN-END:variables
 }
