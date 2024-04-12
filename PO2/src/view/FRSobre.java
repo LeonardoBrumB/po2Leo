@@ -56,7 +56,7 @@ public class FRSobre extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 230, 234));
+        jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 
         lbTitulo.setFont(new java.awt.Font("sansserif", 1, 36)); // NOI18N
         lbTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

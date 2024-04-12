@@ -126,6 +126,24 @@ public class FRMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(miCad);
 
+        mConexao.setText("Conexão");
+        mConexao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mConexaoMouseClicked(evt);
+            }
+        });
+
+        miConsUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1564534_customer_man_user_account_profile_icon (1).png"))); // NOI18N
+        miConsUsuario.setText("Usuários");
+        miConsUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miConsUsuarioActionPerformed(evt);
+            }
+        });
+        mConexao.add(miConsUsuario);
+
+        jMenuBar1.add(mConexao);
+
         mAjuda.setText("Ajuda");
 
         miSobre.setText("Sobre");
@@ -159,7 +177,7 @@ public class FRMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_miCadSairActionPerformed
 
     private void miConsUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miConsUsuarioActionPerformed
-        new FRConsUsuario(this, rootPaneCheckingEnabled).setVisible(true);
+        new FRLoginCons(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miConsUsuarioActionPerformed
 
     private void miCadUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadUsuarioActionPerformed

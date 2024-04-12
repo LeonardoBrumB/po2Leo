@@ -57,7 +57,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 
         lbTitulo.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         lbTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1564534_customer_man_user_account_profile_icon.png"))); // NOI18N
