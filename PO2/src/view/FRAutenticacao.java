@@ -7,7 +7,6 @@ package view;
 
 import controller.UsuarioController;
 import java.awt.event.KeyEvent;
-import utils.Utils;
 import javax.swing.JOptionPane;
 
 /**
@@ -40,6 +39,7 @@ public class FRAutenticacao extends javax.swing.JFrame {
         txtSenha = new javax.swing.JPasswordField();
         btEntrar = new javax.swing.JButton();
         imgPadlock = new javax.swing.JLabel();
+        btCad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("autenticacao");
@@ -87,28 +87,35 @@ public class FRAutenticacao extends javax.swing.JFrame {
             }
         });
 
-        imgPadlock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/326657_https_lock_secure_icon (1).png"))); // NOI18N
+        imgPadlock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone cadeado.png"))); // NOI18N
+
+        btCad.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btCad.setText("Cadastro");
+        btCad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btCadMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(238, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(imgPadlock)
-                        .addGap(230, 230, 230))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btEntrar)
-                        .addGap(235, 235, 235))))
+                .addContainerGap(241, Short.MAX_VALUE)
+                .addComponent(imgPadlock)
+                .addGap(230, 230, 230))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(104, 104, 104)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbSenha)
-                    .addComponent(lbLogin)
-                    .addComponent(txtLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
-                    .addComponent(txtSenha))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btCad)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btEntrar))
+                    .addComponent(lbSenha, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbLogin, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -124,9 +131,11 @@ public class FRAutenticacao extends javax.swing.JFrame {
                 .addComponent(lbSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addComponent(btEntrar)
-                .addGap(40, 40, 40))
+                .addGap(43, 43, 43)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btEntrar)
+                    .addComponent(btCad))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -170,6 +179,11 @@ public class FRAutenticacao extends javax.swing.JFrame {
             logar();
         }
     }//GEN-LAST:event_txtSenhaKeyPressed
+
+    private void btCadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCadMouseClicked
+        new FRCadUsuario(this, rootPaneCheckingEnabled).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btCadMouseClicked
 
     private void logar() {
         if (txtLogin.getText().equals("")) {
@@ -232,6 +246,7 @@ public class FRAutenticacao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btCad;
     private javax.swing.JButton btEntrar;
     private javax.swing.JLabel imgPadlock;
     private javax.swing.JPanel jPanel1;

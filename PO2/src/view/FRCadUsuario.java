@@ -48,7 +48,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
         cbAtivo = new javax.swing.JCheckBox();
         ftxtDataNasc = new javax.swing.JFormattedTextField();
         btSalvar = new javax.swing.JButton();
-        btCancelar = new javax.swing.JButton();
+        btLogin = new javax.swing.JButton();
         lbConfSenha = new javax.swing.JLabel();
         txtConfSenha = new javax.swing.JPasswordField();
 
@@ -60,7 +60,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 
         lbTitulo.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
-        lbTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1564534_customer_man_user_account_profile_icon.png"))); // NOI18N
+        lbTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone pessoa.png"))); // NOI18N
         lbTitulo.setText("Cadastro de usuário");
 
         lbNome.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -103,6 +103,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
             }
         });
 
+        cbAtivo.setBackground(new java.awt.Color(0, 235, 239));
         cbAtivo.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         cbAtivo.setText("Ativo");
         cbAtivo.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +120,6 @@ public class FRCadUsuario extends javax.swing.JDialog {
         });
 
         btSalvar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        btSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/326688_floppy_save_guardar_icon (1).png"))); // NOI18N
         btSalvar.setText(" Salvar");
         btSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -137,17 +137,16 @@ public class FRCadUsuario extends javax.swing.JDialog {
             }
         });
 
-        btCancelar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        btCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/326554_cancel_icon.png"))); // NOI18N
-        btCancelar.setText("Cancelar");
-        btCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+        btLogin.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        btLogin.setText("Login");
+        btLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btCancelarMouseClicked(evt);
+                btLoginMouseClicked(evt);
             }
         });
-        btCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCancelarActionPerformed(evt);
+                btLoginActionPerformed(evt);
             }
         });
 
@@ -178,17 +177,19 @@ public class FRCadUsuario extends javax.swing.JDialog {
                         .addComponent(txtConfSenha, javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(btCancelar)
                                 .addComponent(lbDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addGap(30, 30, 30)
+                                    .addComponent(btLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                     .addComponent(cbAtivo)
-                                    .addGap(52, 52, 52))))))
+                                    .addGap(52, 52, 52))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(43, 43, 43))))))
                 .addGap(149, 149, 149))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(224, 224, 224)
@@ -228,7 +229,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btSalvar)
-                            .addComponent(btCancelar))
+                            .addComponent(btLogin))
                         .addGap(31, 31, 31))))
         );
 
@@ -258,13 +259,14 @@ public class FRCadUsuario extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbAtivoActionPerformed
 
-    private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
+    private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
 
-    }//GEN-LAST:event_btCancelarActionPerformed
+    }//GEN-LAST:event_btLoginActionPerformed
 
-    private void btCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCancelarMouseClicked
+    private void btLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLoginMouseClicked
+        new FRAutenticacao().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btCancelarMouseClicked
+    }//GEN-LAST:event_btLoginMouseClicked
 
     private void btSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSalvarMouseClicked
         //verificar
@@ -291,6 +293,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
         UsuarioController controller = new UsuarioController();
         if(controller.adicionarUsuario(usu)){
             this.dispose();
+            new FRAutenticacao().setVisible(true);
         }
     }//GEN-LAST:event_btSalvarMouseClicked
 
@@ -426,7 +429,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btCancelar;
+    private javax.swing.JButton btLogin;
     private javax.swing.JButton btSalvar;
     private javax.swing.JCheckBox cbAtivo;
     private javax.swing.JFormattedTextField ftxtDataNasc;
