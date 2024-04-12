@@ -89,7 +89,6 @@ public class FRMenu extends javax.swing.JFrame {
             }
         });
 
-        miCadUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1564534_customer_man_user_account_profile_icon (1).png"))); // NOI18N
         miCadUsuario.setText("Usuário");
         miCadUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +97,6 @@ public class FRMenu extends javax.swing.JFrame {
         });
         mConexao.add(miCadUsuario);
 
-        miCadSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/7853741_logout_kashifarif_exit_out_close_icon.png"))); // NOI18N
         miCadSair.setText("Sair");
         miCadSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +114,6 @@ public class FRMenu extends javax.swing.JFrame {
             }
         });
 
-        miConsUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1564534_customer_man_user_account_profile_icon (1).png"))); // NOI18N
         miConsUsuario.setText("Usuário");
         miConsUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

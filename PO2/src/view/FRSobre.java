@@ -74,7 +74,7 @@ public class FRSobre extends javax.swing.JDialog {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Autores: Abner Silva, Cauã Moraes e Leonardo Brum Borges");
 
-        btGitHub.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/211904_social_github_icon.png"))); // NOI18N
+        btGitHub.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone github.png"))); // NOI18N
         btGitHub.setText("GitHub");
         btGitHub.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -82,7 +82,7 @@ public class FRSobre extends javax.swing.JDialog {
             }
         });
 
-        btLinkedin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/104493_linkedin_icon.png"))); // NOI18N
+        btLinkedin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/linkedin.png"))); // NOI18N
         btLinkedin.setText("Linkedin");
         btLinkedin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -95,7 +95,7 @@ public class FRSobre extends javax.swing.JDialog {
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/134226_back_arrow_left_icon (1).png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone voltar 2.png"))); // NOI18N
         jButton4.setText("Voltar");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -166,7 +166,7 @@ public class FRSobre extends javax.swing.JDialog {
                     .addComponent(btLinkedin))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton4)
-                .addGap(144, 144, 144))
+                .addGap(72, 72, 72))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -177,7 +177,7 @@ public class FRSobre extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
