@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+
 public class UsuarioDAO {
 
     public boolean autenticar(String email, String senha) {
