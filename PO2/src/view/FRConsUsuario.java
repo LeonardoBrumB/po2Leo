@@ -81,7 +81,7 @@ public class FRConsUsuario extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tbUsuario);
 
-        btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/3844432_magnifier_search_zoom_icon.png"))); // NOI18N
+        btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone procurar.png"))); // NOI18N
         btPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btPesquisarMouseClicked(evt);
@@ -94,7 +94,8 @@ public class FRConsUsuario extends javax.swing.JDialog {
         jLabel2.setText("Filtro:");
 
         btVoltar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/134226_back_arrow_left_icon.png"))); // NOI18N
+        btVoltar.setForeground(new java.awt.Color(0, 0, 0));
+        btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone voltar.png"))); // NOI18N
         btVoltar.setText("Voltar");
         btVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -103,7 +104,8 @@ public class FRConsUsuario extends javax.swing.JDialog {
         });
 
         btAlterar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        btAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/8666681_edit_icon.png"))); // NOI18N
+        btAlterar.setForeground(new java.awt.Color(0, 0, 0));
+        btAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone editar.png"))); // NOI18N
         btAlterar.setText("Alterar");
         btAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

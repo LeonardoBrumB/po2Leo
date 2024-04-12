@@ -73,7 +73,7 @@ public class FRUPDUsuario extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 
         btDeletar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/3844425_can_trash_icon (1).png"))); // NOI18N
@@ -95,7 +95,7 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         });
 
         lbTitulo.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
-        lbTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/10758981_user_pen_icon (1).png"))); // NOI18N
+        lbTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone editar usuario.png"))); // NOI18N
         lbTitulo.setText("Alterar de usuário");
 
         btCancelar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -165,6 +165,7 @@ public class FRUPDUsuario extends javax.swing.JDialog {
             }
         });
 
+        cbAtivo.setBackground(new java.awt.Color(0, 235, 239));
         cbAtivo.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         cbAtivo.setText("Ativo");
         cbAtivo.addActionListener(new java.awt.event.ActionListener() {
@@ -279,7 +280,7 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
