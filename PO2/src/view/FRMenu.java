@@ -37,7 +37,7 @@ public class FRMenu extends javax.swing.JFrame {
         miCadUsuario = new javax.swing.JMenuItem();
         miCadSair = new javax.swing.JMenuItem();
         miCad = new javax.swing.JMenu();
-        miConsUsuario = new javax.swing.JMenuItem();
+        miAreaFuncionario = new javax.swing.JMenuItem();
         mAjuda = new javax.swing.JMenu();
         miSobre = new javax.swing.JMenuItem();
 
@@ -83,11 +83,6 @@ public class FRMenu extends javax.swing.JFrame {
         );
 
         mConexao.setText("Conexão");
-        mConexao.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mConexaoMouseClicked(evt);
-            }
-        });
 
         miCadUsuario.setText("Usuário");
         miCadUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -108,19 +103,19 @@ public class FRMenu extends javax.swing.JFrame {
         jMenuBar1.add(mConexao);
 
         miCad.setText("Cadastro");
-        miCad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miCadActionPerformed(evt);
-            }
-        });
 
-        miConsUsuario.setText("Usuário");
-        miConsUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miConsUsuarioActionPerformed(evt);
+        miAreaFuncionario.setText("Área do funcionário");
+        miAreaFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miAreaFuncionarioMouseClicked(evt);
             }
         });
-        miCad.add(miConsUsuario);
+        miAreaFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAreaFuncionarioActionPerformed(evt);
+            }
+        });
+        miCad.add(miAreaFuncionario);
 
         jMenuBar1.add(miCad);
 
@@ -156,27 +151,24 @@ public class FRMenu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_miCadSairActionPerformed
 
-    private void miConsUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miConsUsuarioActionPerformed
-        new FRLoginCons(this, rootPaneCheckingEnabled).setVisible(true);
-    }//GEN-LAST:event_miConsUsuarioActionPerformed
-
-    private void miCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadActionPerformed
-        new FRConsUsuario(this, rootPaneCheckingEnabled).setVisible(true);
-    }//GEN-LAST:event_miCadActionPerformed
-
-    private void mConexaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mConexaoMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mConexaoMouseClicked
-
     private void miSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSobreActionPerformed
         new FRSobre(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miSobreActionPerformed
 
     private void miCadUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadUsuarioActionPerformed
-
         new FRCadUsuario(this, rootPaneCheckingEnabled).setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_miCadUsuarioActionPerformed
+    private void miAreaFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miAreaFuncionarioMouseClicked
+        this.dispose();
+        new FRLoginCons(this, rootPaneCheckingEnabled).setVisible(true);
+
+    }//GEN-LAST:event_miAreaFuncionarioMouseClicked
+
+    private void miAreaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAreaFuncionarioActionPerformed
+        this.dispose();
+        new FRLoginCons(this, rootPaneCheckingEnabled).setVisible(true);
+
+    }//GEN-LAST:event_miAreaFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,10 +213,10 @@ public class FRMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu mAjuda;
     private javax.swing.JMenu mConexao;
+    private javax.swing.JMenuItem miAreaFuncionario;
     private javax.swing.JMenu miCad;
     private javax.swing.JMenuItem miCadSair;
     private javax.swing.JMenuItem miCadUsuario;
-    private javax.swing.JMenuItem miConsUsuario;
     private javax.swing.JMenuItem miSobre;
     // End of variables declaration//GEN-END:variables
 }
