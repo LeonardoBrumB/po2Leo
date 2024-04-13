@@ -6,6 +6,7 @@
 package view;
 
 import controller.UsuarioController;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,6 +29,7 @@ public class FRLoginCons extends javax.swing.JDialog {
     public FRLoginCons(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -55,9 +57,9 @@ public class FRLoginCons extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Senha");
 
-        txtSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenhaActionPerformed(evt);
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
             }
         });
 
@@ -127,28 +129,19 @@ public class FRLoginCons extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
-
-        
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSenhaActionPerformed
-
     private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
-
          logar();
-        
-        
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnEntrarMouseClicked
 
     private void btnVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVoltarMouseClicked
-
          this.dispose();
-        
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnVoltarMouseClicked
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            logar();
+        }
+    }//GEN-LAST:event_txtSenhaKeyPressed
     
     private void logar() {
 
@@ -159,8 +152,9 @@ public class FRLoginCons extends javax.swing.JDialog {
 
         
         if (new String(txtSenha.getPassword()).equals("321")) {
-            new FRConsUsuario(null, rootPaneCheckingEnabled).setVisible(true);
             this.dispose();
+            new FRMenuFuncionario(null, rootPaneCheckingEnabled).setVisible(true);
+            
         }else{
             JOptionPane.showMessageDialog(null,"Senha incorreta! toma no seu cu");
             this.dispose();
