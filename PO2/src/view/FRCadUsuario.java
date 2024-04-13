@@ -7,8 +7,13 @@ package view;
 
 import controller.UsuarioController;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.util.Date;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import model.Usuario;
 import utils.Utils;
 
@@ -51,6 +56,8 @@ public class FRCadUsuario extends javax.swing.JDialog {
         btLogin = new javax.swing.JButton();
         lbConfSenha = new javax.swing.JLabel();
         txtConfSenha = new javax.swing.JPasswordField();
+        lblFoto = new javax.swing.JLabel();
+        btnEcolherImagen = new javax.swing.JButton();
 
         jLabel6.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel6.setText("Senha:");
@@ -159,14 +166,20 @@ public class FRCadUsuario extends javax.swing.JDialog {
             }
         });
 
+        btnEcolherImagen.setText("Escolher Imagen");
+        btnEcolherImagen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEcolherImagenMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(152, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbNome)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lbEmail, javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,8 +190,8 @@ public class FRCadUsuario extends javax.swing.JDialog {
                         .addComponent(txtConfSenha, javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(lbDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lbDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                     .addGap(30, 30, 30)
                                     .addComponent(btLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -189,19 +202,35 @@ public class FRCadUsuario extends javax.swing.JDialog {
                                     .addGap(52, 52, 52))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                     .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(43, 43, 43))))))
+                                    .addGap(43, 43, 43)))))
+                    .addComponent(lbNome))
                 .addGap(149, 149, 149))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(224, 224, 224)
-                .addComponent(lbTitulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(281, 281, 281)
+                        .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(btnEcolherImagen))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addComponent(lbTitulo)))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(lbTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(13, 13, 13))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(btnEcolherImagen)
+                        .addGap(64, 64, 64)))
                 .addComponent(lbNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -225,12 +254,10 @@ public class FRCadUsuario extends javax.swing.JDialog {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ftxtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbAtivo))
-                        .addGap(95, 95, 95))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btSalvar)
-                            .addComponent(btLogin))
-                        .addGap(31, 31, 31))))
+                        .addGap(64, 64, 64))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btSalvar)
+                        .addComponent(btLogin))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -284,14 +311,12 @@ public class FRCadUsuario extends javax.swing.JDialog {
         usu.setSenha(senha);
         usu.setAtivo(cbAtivo.isSelected());
         
-        
-        
-        
         Date data = Utils.converterStringToDate(ftxtDataNasc.getText());
         usu.setDataNasc(data);
+        usu.setImagem(lblFoto.getIcon());
         
         UsuarioController controller = new UsuarioController();
-        if(controller.adicionarUsuario(usu)){
+        if (controller.adicionarUsuario(usu)) {
             this.dispose();
             new FRAutenticacao().setVisible(true);
         }
@@ -302,71 +327,91 @@ public class FRCadUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_btSalvarActionPerformed
 
     private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             txtNome.requestFocus();
-        } 
+        }
     }//GEN-LAST:event_txtNomeKeyPressed
 
     private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             txtEmail.requestFocus();
-        } 
+        }
     }//GEN-LAST:event_txtEmailKeyPressed
 
     private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             txtSenha.requestFocus();
-        } 
+        }
     }//GEN-LAST:event_txtSenhaKeyPressed
 
     private void txtConfSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfSenhaKeyPressed
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             txtConfSenha.requestFocus();
-        } 
+        }
     }//GEN-LAST:event_txtConfSenhaKeyPressed
 
     private void ftxtDataNascKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ftxtDataNascKeyPressed
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             ftxtDataNasc.requestFocus();
-        } 
+        }
     }//GEN-LAST:event_ftxtDataNascKeyPressed
 
     private void btSalvarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btSalvarKeyPressed
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btSalvarMouseClicked(null);
-        } 
+        }
     }//GEN-LAST:event_btSalvarKeyPressed
 
+    private void btnEcolherImagenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEcolherImagenMouseClicked
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Escolha um arquivo");
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter(
+                "Imagens", "jpg", "jpeg", "png");
+        fileChooser.setFileFilter(filtro);
+        
+        fileChooser.setMultiSelectionEnabled(false);
+        
+        int returnValue = fileChooser.showOpenDialog(null);
+        
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File arquivo = fileChooser.getSelectedFile();
+            Icon icon = Utils.fileParaIcon(arquivo);
+            
+            ImageIcon iconRedimensionado = Utils.redimensionarIcon(icon, 140, 140);
+            lblFoto.setIcon(iconRedimensionado);
+        }
+    }//GEN-LAST:event_btnEcolherImagenMouseClicked
+    
     private boolean verificarCampos() {
         if (txtNome.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Campo 'Nome' está em branco.");
             return false;
-
+            
         }
         if (!txtNome.getText().matches("^[\\p{L} ]+$")) {
             JOptionPane.showMessageDialog(null, "Campo 'Nome' possui caracteres inválidos.");
             return false;
-
+            
         }
         if (txtEmail.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Campo 'Email' está em branco.");
             return false;
-
+            
         }
         if (!txtEmail.getText().matches("^[a-zA-Z._]+@[a-zA-Z._]+.[a-zA-Z._]+$")) {
             JOptionPane.showMessageDialog(null, "Campo 'Email' Possui formato inválido.");
             return false;
-
+            
         }
         if (ftxtDataNasc.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Campo 'Data de nascimento' está em branco.");
             return false;
-
+            
         }
         if (!ftxtDataNasc.getText().matches("^[0-9]{2}/[0-9]{2}/[0-9]{4}$")) {
             JOptionPane.showMessageDialog(null, "Campo 'Data de nascimento' possui formato inválido." + "Ex: 01/01/2000");
             return false;
-
+            
         }
         
         String senha = new String(txtSenha.getPassword());
@@ -374,16 +419,16 @@ public class FRCadUsuario extends javax.swing.JDialog {
         if (senha.length() < 8) {
             JOptionPane.showMessageDialog(null, "Campo 'Senha' deve ser maior que 8 caracteres.");
             return false;
-
+            
         }
         if (!senha.equals(new String(txtConfSenha.getPassword()))) {
             JOptionPane.showMessageDialog(null, "As senhas não são iguais.");
             return false;
-
+            
         }
         
         return true;
-
+        
     }
 
     /**
@@ -431,6 +476,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btLogin;
     private javax.swing.JButton btSalvar;
+    private javax.swing.JButton btnEcolherImagen;
     private javax.swing.JCheckBox cbAtivo;
     private javax.swing.JFormattedTextField ftxtDataNasc;
     private javax.swing.JLabel jLabel6;
@@ -441,6 +487,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
     private javax.swing.JLabel lbNome;
     private javax.swing.JLabel lbSenha;
     private javax.swing.JLabel lbTitulo;
+    private javax.swing.JLabel lblFoto;
     private javax.swing.JPasswordField txtConfSenha;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNome;
