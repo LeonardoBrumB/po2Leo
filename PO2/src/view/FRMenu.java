@@ -33,13 +33,14 @@ public class FRMenu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mConexao = new javax.swing.JMenu();
-        miCadUsuario = new javax.swing.JMenuItem();
+        mMenu = new javax.swing.JMenu();
+        miConsultas = new javax.swing.JMenuItem();
+        miAgendamento = new javax.swing.JMenuItem();
         miCadSair = new javax.swing.JMenuItem();
-        miCad = new javax.swing.JMenu();
-        miAreaFuncionario = new javax.swing.JMenuItem();
         mAjuda = new javax.swing.JMenu();
         miSobre = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        miAreaFuncionario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("menu");
@@ -82,15 +83,33 @@ public class FRMenu extends javax.swing.JFrame {
                 .addComponent(jLabel1))
         );
 
-        mConexao.setText("Conexão");
+        mMenu.setText("Menu");
 
-        miCadUsuario.setText("Usuário");
-        miCadUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miCadUsuarioActionPerformed(evt);
+        miConsultas.setText("Consultas");
+        miConsultas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miConsultasMouseClicked(evt);
             }
         });
-        mConexao.add(miCadUsuario);
+        miConsultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miConsultasActionPerformed(evt);
+            }
+        });
+        mMenu.add(miConsultas);
+
+        miAgendamento.setText("Agendamento");
+        miAgendamento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miAgendamentoMouseClicked(evt);
+            }
+        });
+        miAgendamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAgendamentoActionPerformed(evt);
+            }
+        });
+        mMenu.add(miAgendamento);
 
         miCadSair.setText("Sair");
         miCadSair.addActionListener(new java.awt.event.ActionListener() {
@@ -98,11 +117,22 @@ public class FRMenu extends javax.swing.JFrame {
                 miCadSairActionPerformed(evt);
             }
         });
-        mConexao.add(miCadSair);
+        mMenu.add(miCadSair);
 
-        jMenuBar1.add(mConexao);
+        jMenuBar1.add(mMenu);
 
-        miCad.setText("Cadastro");
+        mAjuda.setText("Ajuda");
+
+        miSobre.setText("Sobre");
+        miSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSobreActionPerformed(evt);
+            }
+        });
+        mAjuda.add(miSobre);
+
+        jMenuItem1.setText("Suporte");
+        mAjuda.add(jMenuItem1);
 
         miAreaFuncionario.setText("Área do funcionário");
         miAreaFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -115,19 +145,7 @@ public class FRMenu extends javax.swing.JFrame {
                 miAreaFuncionarioActionPerformed(evt);
             }
         });
-        miCad.add(miAreaFuncionario);
-
-        jMenuBar1.add(miCad);
-
-        mAjuda.setText("Ajuda");
-
-        miSobre.setText("Sobre");
-        miSobre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miSobreActionPerformed(evt);
-            }
-        });
-        mAjuda.add(miSobre);
+        mAjuda.add(miAreaFuncionario);
 
         jMenuBar1.add(mAjuda);
 
@@ -155,9 +173,6 @@ public class FRMenu extends javax.swing.JFrame {
         new FRSobre(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miSobreActionPerformed
 
-    private void miCadUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadUsuarioActionPerformed
-        new FRCadUsuario(this, rootPaneCheckingEnabled).setVisible(true);
-    }//GEN-LAST:event_miCadUsuarioActionPerformed
     private void miAreaFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miAreaFuncionarioMouseClicked
         this.dispose();
         new FRLoginCons(this, rootPaneCheckingEnabled).setVisible(true);
@@ -169,6 +184,26 @@ public class FRMenu extends javax.swing.JFrame {
         new FRLoginCons(this, rootPaneCheckingEnabled).setVisible(true);
 
     }//GEN-LAST:event_miAreaFuncionarioActionPerformed
+
+    private void miConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miConsultasActionPerformed
+        this.dispose();
+        new FRConsultas(this, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miConsultasActionPerformed
+
+    private void miConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miConsultasMouseClicked
+        this.dispose();
+        new FRConsultas(this, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miConsultasMouseClicked
+
+    private void miAgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAgendamentoActionPerformed
+        this.dispose();
+        new FRAgendamento(this, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miAgendamentoActionPerformed
+
+    private void miAgendamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miAgendamentoMouseClicked
+        this.dispose();
+        new FRAgendamento(this, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miAgendamentoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -210,13 +245,14 @@ public class FRMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu mAjuda;
-    private javax.swing.JMenu mConexao;
+    private javax.swing.JMenu mMenu;
+    private javax.swing.JMenuItem miAgendamento;
     private javax.swing.JMenuItem miAreaFuncionario;
-    private javax.swing.JMenu miCad;
     private javax.swing.JMenuItem miCadSair;
-    private javax.swing.JMenuItem miCadUsuario;
+    private javax.swing.JMenuItem miConsultas;
     private javax.swing.JMenuItem miSobre;
     // End of variables declaration//GEN-END:variables
 }
