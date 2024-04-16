@@ -96,6 +96,11 @@ public class FRAutenticacao extends javax.swing.JFrame {
                 btCadMouseClicked(evt);
             }
         });
+        btCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -184,6 +189,10 @@ public class FRAutenticacao extends javax.swing.JFrame {
         new FRCadUsuario(this, rootPaneCheckingEnabled).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btCadMouseClicked
+
+    private void btCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btCadActionPerformed
 
     private void logar() {
         if (txtLogin.getText().equals("")) {
