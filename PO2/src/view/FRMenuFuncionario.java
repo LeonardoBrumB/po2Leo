@@ -31,8 +31,14 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
+        mMenu = new javax.swing.JMenu();
+        miMenuInicial = new javax.swing.JMenuItem();
+        miSair = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        miConsUsuario = new javax.swing.JMenuItem();
+        mAjuda = new javax.swing.JMenu();
+        miSobre = new javax.swing.JMenuItem();
+        miSuporte = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -42,18 +48,89 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 627, Short.MAX_VALUE)
+            .addGap(0, 725, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 491, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("File");
+        mMenu.setText("Menu");
+
+        miMenuInicial.setText("Menu Inicial");
+        miMenuInicial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miMenuInicialMouseClicked(evt);
+            }
+        });
+        miMenuInicial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miMenuInicialActionPerformed(evt);
+            }
+        });
+        mMenu.add(miMenuInicial);
+
+        miSair.setText("Sair");
+        miSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miSairMouseClicked(evt);
+            }
+        });
+        miSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSairActionPerformed(evt);
+            }
+        });
+        mMenu.add(miSair);
+
+        jMenuBar1.add(mMenu);
+
+        jMenu1.setText("Usuario");
+
+        miConsUsuario.setText("Consultar Usuarios");
+        miConsUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miConsUsuarioMouseClicked(evt);
+            }
+        });
+        miConsUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miConsUsuarioActionPerformed(evt);
+            }
+        });
+        jMenu1.add(miConsUsuario);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        mAjuda.setText("Ajuda");
+
+        miSobre.setText("Sobre");
+        miSobre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miSobreMouseClicked(evt);
+            }
+        });
+        miSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSobreActionPerformed(evt);
+            }
+        });
+        mAjuda.add(miSobre);
+
+        miSuporte.setText("Suporte");
+        miSuporte.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miSuporteMouseClicked(evt);
+            }
+        });
+        miSuporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSuporteActionPerformed(evt);
+            }
+        });
+        mAjuda.add(miSuporte);
+
+        jMenuBar1.add(mAjuda);
 
         setJMenuBar(jMenuBar1);
 
@@ -70,6 +147,48 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void miMenuInicialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miMenuInicialMouseClicked
+        this.dispose();
+        new FRMenu().setVisible(true);
+    }//GEN-LAST:event_miMenuInicialMouseClicked
+
+    private void miMenuInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMenuInicialActionPerformed
+        this.dispose();
+        new FRMenu().setVisible(true);
+    }//GEN-LAST:event_miMenuInicialActionPerformed
+
+    private void miSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSairActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_miSairActionPerformed
+
+    private void miSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miSairMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_miSairMouseClicked
+
+    private void miConsUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miConsUsuarioActionPerformed
+        new FRConsUsuario(null, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miConsUsuarioActionPerformed
+
+    private void miConsUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miConsUsuarioMouseClicked
+        new FRConsUsuario(null, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miConsUsuarioMouseClicked
+
+    private void miSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSobreActionPerformed
+        new FRSobre(null, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miSobreActionPerformed
+
+    private void miSobreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miSobreMouseClicked
+        new FRSobre(null, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miSobreMouseClicked
+
+    private void miSuporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSuporteActionPerformed
+        new FRSuporte(null, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miSuporteActionPerformed
+
+    private void miSuporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miSuporteMouseClicked
+        new FRSuporte(null, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miSuporteMouseClicked
 
     /**
      * @param args the command line arguments
@@ -115,8 +234,14 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu mAjuda;
+    private javax.swing.JMenu mMenu;
+    private javax.swing.JMenuItem miConsUsuario;
+    private javax.swing.JMenuItem miMenuInicial;
+    private javax.swing.JMenuItem miSair;
+    private javax.swing.JMenuItem miSobre;
+    private javax.swing.JMenuItem miSuporte;
     // End of variables declaration//GEN-END:variables
 }
