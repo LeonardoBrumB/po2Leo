@@ -22,6 +22,7 @@ public class FRConsUsuario extends javax.swing.JDialog {
     public FRConsUsuario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

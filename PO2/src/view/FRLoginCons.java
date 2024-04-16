@@ -156,7 +156,7 @@ public class FRLoginCons extends javax.swing.JDialog {
             new FRMenuFuncionario(null, rootPaneCheckingEnabled).setVisible(true);
             
         }else{
-            JOptionPane.showMessageDialog(null,"Senha incorreta! toma no seu cu");
+            JOptionPane.showMessageDialog(null,"Senha incorreta!");
             this.dispose();
             new FRMenu().setVisible(true);
         }

@@ -39,7 +39,7 @@ public class FRMenu extends javax.swing.JFrame {
         miCadSair = new javax.swing.JMenuItem();
         mAjuda = new javax.swing.JMenu();
         miSobre = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        miSuporte = new javax.swing.JMenuItem();
         miAreaFuncionario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -124,6 +124,11 @@ public class FRMenu extends javax.swing.JFrame {
         mAjuda.setText("Ajuda");
 
         miSobre.setText("Sobre");
+        miSobre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miSobreMouseClicked(evt);
+            }
+        });
         miSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 miSobreActionPerformed(evt);
@@ -131,8 +136,18 @@ public class FRMenu extends javax.swing.JFrame {
         });
         mAjuda.add(miSobre);
 
-        jMenuItem1.setText("Suporte");
-        mAjuda.add(jMenuItem1);
+        miSuporte.setText("Suporte");
+        miSuporte.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miSuporteMouseClicked(evt);
+            }
+        });
+        miSuporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSuporteActionPerformed(evt);
+            }
+        });
+        mAjuda.add(miSuporte);
 
         miAreaFuncionario.setText("Área do funcionário");
         miAreaFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -205,6 +220,18 @@ public class FRMenu extends javax.swing.JFrame {
         new FRAgendamento(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miAgendamentoMouseClicked
 
+    private void miSobreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miSobreMouseClicked
+        new FRSobre(this, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miSobreMouseClicked
+
+    private void miSuporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSuporteActionPerformed
+        new FRSuporte(null, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miSuporteActionPerformed
+
+    private void miSuporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miSuporteMouseClicked
+        new FRSuporte(null, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miSuporteMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -245,7 +272,6 @@ public class FRMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu mAjuda;
     private javax.swing.JMenu mMenu;
@@ -254,5 +280,6 @@ public class FRMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem miCadSair;
     private javax.swing.JMenuItem miConsultas;
     private javax.swing.JMenuItem miSobre;
+    private javax.swing.JMenuItem miSuporte;
     // End of variables declaration//GEN-END:variables
 }
