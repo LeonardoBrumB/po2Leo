@@ -181,8 +181,8 @@ public class FRAutenticacao extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSenhaKeyPressed
 
     private void btCadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCadMouseClicked
-        new FRCadUsuario(this, rootPaneCheckingEnabled).setVisible(true);
         this.dispose();
+        new FRCadUsuario(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_btCadMouseClicked
 
     private void logar() {

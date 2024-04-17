@@ -15,7 +15,7 @@ import utils.Utils;
 public class UsuarioDAO {
 
     public boolean autenticar(String email, String senha) {
-        String sql = "SELECT * from TBUSUARIO WHERE email = ? and senha = ? and ativo = true";
+        String sql = "SELECT * from TBUSUARIO WHERE email = ? and senha = ?";
 
         GerenciadorConexao gerenciador = new GerenciadorConexao();
         Connection con = gerenciador.getConexao();
@@ -40,26 +40,22 @@ public class UsuarioDAO {
     }
 
     public boolean adicionarUsuario(Usuario u) {
-        String sql = "INSERT into TBUSUARIO(nome, email, senha, dataNasc, ativo, imagem) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT into TBUSUARIO(nome, email, senha, dataNasc) VALUES (?,?,?,?,?,?)";
 
         GerenciadorConexao gerenciador = new GerenciadorConexao();
         Connection con = gerenciador.getConexao();
         PreparedStatement stmt = null;
 
         try {
-            byte[] iconBytes = Utils.iconToBytes(u.getImagem());
-
             stmt = con.prepareStatement(sql);
             stmt.setString(1, u.getNome());
             stmt.setString(2, u.getEmail());
             stmt.setString(3, u.getSenha());
             stmt.setDate(4, new java.sql.Date(u.getDataNasc().getTime()));
-            stmt.setBoolean(5, u.isAtivo());
-            stmt.setBytes(6, iconBytes);
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Usuario " + u.getNome() + " inserido com sucesso!");
             return true;
-        } catch (SQLException | IOException e) {
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
         } finally {
             gerenciador.closeConnection(stmt);
@@ -100,7 +96,6 @@ public class UsuarioDAO {
                 usuario.setNome(rs.getString("nome"));
                 usuario.setEmail(rs.getString("email"));
                 usuario.setDataNasc(rs.getDate("datanasc"));
-                usuario.setAtivo(rs.getBoolean("ativo"));
                 usuarios.add(usuario);
             }
         } catch (SQLException ex) {
@@ -133,7 +128,6 @@ public class UsuarioDAO {
                 usuario.setEmail(rs.getString("email"));
                 usuario.setSenha(rs.getString("senha"));
                 usuario.setDataNasc(rs.getDate("datanasc"));
-                usuario.setAtivo(rs.getBoolean("ativo"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -145,26 +139,28 @@ public class UsuarioDAO {
 
     }
 
-    public boolean alterarUsuario(Usuario u) {
-        String sql = "UPDATE tbusuario SET nome = ?, email = ?, senha = ?, datanasc = ?, ativo = ? WHERE pkusuario = ?";
+    public boolean alterarFuncionario(Funcionario func) {
+        String sql = "UPDATE tbfuncionario SET nome = ?, email = ?, senha = ?, datanasc = ?, imagem = ? WHERE pkusuario = ?";
 
         GerenciadorConexao gerenciador = new GerenciadorConexao();
         Connection con = gerenciador.getConexao();
         PreparedStatement stmt = null;
 
         try {
+            byte[] iconBytes = Utils.iconToBytes(func.getImagem());
+
             stmt = con.prepareStatement(sql);
-            stmt.setString(1, u.getNome());
-            stmt.setString(2, u.getEmail());
-            stmt.setString(3, u.getSenha());
-            stmt.setDate(4, new java.sql.Date(u.getDataNasc().getTime()));
-            stmt.setBoolean(5, u.isAtivo());
-            stmt.setLong(6, u.getPkUsuario());
+            stmt.setString(1, func.getNomeF());
+            stmt.setString(2, func.getEmailF());
+            stmt.setString(3, func.getSenhaF());
+            stmt.setDate(4, new java.sql.Date(func.getDataNascF().getTime()));
+            stmt.setBytes(5, iconBytes);
+            stmt.setLong(6, func.getPkFunc());
 
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Usuario atualizado com sucesso!");
             return true;
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             JOptionPane.showMessageDialog(null, "Erro ao atualizar: " + e.getMessage());
         } finally {
             gerenciador.closeConnection(stmt);
@@ -188,6 +184,33 @@ public class UsuarioDAO {
             return true;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao excluir: " + e.getMessage());
+        } finally {
+            gerenciador.closeConnection(stmt);
+        }
+        return false;
+    }
+
+    public boolean adicionarFuncionario(Funcionario func) {
+        String sql = "INSERT into TBUSUARIO(nomeF, emailF, senhaF, dataNascF, imagem) VALUES (?,?,?,?,?,?)";
+
+        GerenciadorConexao gerenciador = new GerenciadorConexao();
+        Connection con = gerenciador.getConexao();
+        PreparedStatement stmt = null;
+
+        try {
+            byte[] iconBytes = Utils.iconToBytes(func.getImagem());
+
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1, func.getNomeF());
+            stmt.setString(2, func.getEmailF());
+            stmt.setString(3, func.getSenhaF());
+            stmt.setDate(4, new java.sql.Date(func.getDataNascF().getTime()));
+            stmt.setBytes(5, iconBytes);
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Usuario " + func.getNomeF() + " inserido com sucesso!");
+            return true;
+        } catch (SQLException | IOException e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
         } finally {
             gerenciador.closeConnection(stmt);
         }

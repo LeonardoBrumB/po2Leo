@@ -1,4 +1,4 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import model.Funcionario;
 import model.Usuario;
 import utils.Utils;
 
@@ -64,12 +65,12 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         lbSenha = new javax.swing.JLabel();
         lbDataNasc = new javax.swing.JLabel();
         txtSenha = new javax.swing.JPasswordField();
-        cbAtivo = new javax.swing.JCheckBox();
         ftxtDataNasc = new javax.swing.JFormattedTextField();
         btSalvar = new javax.swing.JButton();
         lbCodigo = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btAlterarSenha = new javax.swing.JButton();
+        lbFoto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -165,15 +166,6 @@ public class FRUPDUsuario extends javax.swing.JDialog {
             }
         });
 
-        cbAtivo.setBackground(new java.awt.Color(0, 235, 239));
-        cbAtivo.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        cbAtivo.setText("Ativo");
-        cbAtivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbAtivoActionPerformed(evt);
-            }
-        });
-
         ftxtDataNasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM))));
         ftxtDataNasc.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -229,6 +221,8 @@ public class FRUPDUsuario extends javax.swing.JDialog {
             }
         });
 
+        lbFoto.setText("jLabel1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -261,28 +255,30 @@ public class FRUPDUsuario extends javax.swing.JDialog {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(btDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(cbAtivo)
-                                        .addGap(52, 52, 52))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(8, 8, 8))))
+                                .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8))
                             .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btAlterarSenha)))
                 .addGap(29, 29, 29))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(lbTitulo)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(217, 217, 217)
+                        .addComponent(lbTitulo))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(304, 304, 304)
+                        .addComponent(lbFoto)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
                 .addComponent(lbTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(38, 38, 38)
+                .addComponent(lbFoto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbCodigo, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -309,10 +305,8 @@ public class FRUPDUsuario extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ftxtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbAtivo))
-                        .addGap(64, 64, 64))
+                        .addComponent(ftxtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btDeletar)
                         .addComponent(btSalvar)
@@ -335,15 +329,15 @@ public class FRUPDUsuario extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btDeletarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDeletarMouseClicked
-        int resposta = JOptionPane.showConfirmDialog(null,"Deseja excluir o usuário?",
+        int resposta = JOptionPane.showConfirmDialog(null, "Deseja excluir o usuário?",
                 "Confirmação", JOptionPane.YES_NO_OPTION);
-        if(resposta == JOptionPane.YES_NO_OPTION){
+        if (resposta == JOptionPane.YES_NO_OPTION) {
             UsuarioController controller = new UsuarioController();
-            if(controller.excluirUsuario(pkUsuario)){
+            if (controller.excluirUsuario(pkUsuario)) {
                 this.dispose();
             }
         }
-        
+
     }//GEN-LAST:event_btDeletarMouseClicked
 
     private void btDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarActionPerformed
@@ -394,10 +388,6 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtSenhaKeyPressed
 
-    private void cbAtivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAtivoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbAtivoActionPerformed
-
     private void ftxtDataNascKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ftxtDataNascKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             ftxtDataNasc.requestFocus();
@@ -409,10 +399,10 @@ public class FRUPDUsuario extends javax.swing.JDialog {
             return;
         }
 
-        Usuario usu = new Usuario();
-        usu.setPkUsuario(pkUsuario);
-        usu.setNome(txtNome.getText());
-        usu.setEmail(txtEmail.getText());
+        Funcionario func = new Funcionario();
+        func.setPkFunc(pkUsuario);
+        func.setNomeF(txtNome.getText());
+        func.setEmailF(txtEmail.getText());
 
         String senha = "";
         if (txtSenha.isEditable()) {
@@ -422,15 +412,15 @@ public class FRUPDUsuario extends javax.swing.JDialog {
             senha = new String(txtSenha.getPassword());
 
         }
-        
-        usu.setSenha(senha);
-        usu.setAtivo(cbAtivo.isSelected());
+
+        func.setSenhaF(senha);
 
         Date data = Utils.converterStringToDate(ftxtDataNasc.getText());
-        usu.setDataNasc(data);
+        func.setDataNascF(data);
+        func.setImagem(lbFoto.getIcon());
 
         UsuarioController controller = new UsuarioController();
-        if (controller.alterarUsuario(usu)) {
+        if (controller.alterarFuncionario(func)) {
             this.dispose();
         }
     }//GEN-LAST:event_btSalvarMouseClicked
@@ -540,7 +530,6 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         txtSenha.setText(usu.getSenha());
         txtConfSenha.setText(usu.getSenha());
         setSenhaUsuario(usu.getSenha());
-        cbAtivo.setSelected(usu.isAtivo());
     }
 
     /**
@@ -590,13 +579,13 @@ public class FRUPDUsuario extends javax.swing.JDialog {
     private javax.swing.JButton btCancelar;
     private javax.swing.JButton btDeletar;
     private javax.swing.JButton btSalvar;
-    private javax.swing.JCheckBox cbAtivo;
     private javax.swing.JFormattedTextField ftxtDataNasc;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbCodigo;
     private javax.swing.JLabel lbConfSenha;
     private javax.swing.JLabel lbDataNasc;
     private javax.swing.JLabel lbEmail;
+    private javax.swing.JLabel lbFoto;
     private javax.swing.JLabel lbNome;
     private javax.swing.JLabel lbSenha;
     private javax.swing.JLabel lbTitulo;

@@ -226,8 +226,7 @@ public class FRConsUsuario extends javax.swing.JDialog {
             Object[] linha = {usu.getPkUsuario()
             , usu.getNome()
             , usu.getEmail()
-            , Utils.converterDateToString(usu.getDataNasc())
-            , usu.ativoToString()};
+            , Utils.converterDateToString(usu.getDataNasc())};
             modelo.addRow(linha);
         }
     }
