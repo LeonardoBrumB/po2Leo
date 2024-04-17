@@ -191,7 +191,7 @@ public class UsuarioDAO {
     }
 
     public boolean adicionarFuncionario(Funcionario func) {
-        String sql = "INSERT into TBUSUARIO(nomeF, emailF, senhaF, dataNascF, imagem) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT into TBFUNCIONARIO(nomeF, emailF, senhaF, dataNascF, imagem) VALUES (?,?,?,?,?,?)";
 
         GerenciadorConexao gerenciador = new GerenciadorConexao();
         Connection con = gerenciador.getConexao();
