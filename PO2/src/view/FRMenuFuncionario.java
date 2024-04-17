@@ -5,6 +5,13 @@
  */
 package view;
 
+import java.io.File;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import utils.Utils;
+
 /**
  *
  * @author aluno.saolucas
@@ -30,6 +37,8 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        btnBotaoEntrar = new javax.swing.JButton();
+        lblFoto = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mMenu = new javax.swing.JMenu();
         miMenuInicial = new javax.swing.JMenuItem();
@@ -44,15 +53,35 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 
+        btnBotaoEntrar.setText("Entrar");
+        btnBotaoEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBotaoEntrarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 725, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(145, Short.MAX_VALUE)
+                .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(btnBotaoEntrar)
+                .addGap(193, 193, 193))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 491, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(222, 222, 222)
+                        .addComponent(btnBotaoEntrar)))
+                .addContainerGap(232, Short.MAX_VALUE))
         );
 
         mMenu.setText("Menu");
@@ -181,6 +210,29 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
         new FRCadFuncionario(null, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miCadFuncionarioActionPerformed
 
+    private void btnBotaoEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBotaoEntrarMouseClicked
+
+
+         JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Escolha um arquivo");
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter(
+                "Imagens", "jpg", "jpeg", "png");
+        fileChooser.setFileFilter(filtro);
+        
+        fileChooser.setMultiSelectionEnabled(false);
+        
+        int returnValue = fileChooser.showOpenDialog(null);
+        
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File arquivo = fileChooser.getSelectedFile();
+            Icon icon = Utils.fileParaIcon(arquivo);
+            
+            ImageIcon iconRedimensionado = Utils.redimensionarIcon(icon, 140, 140);
+            lblFoto.setIcon(iconRedimensionado);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBotaoEntrarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -224,9 +276,11 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBotaoEntrar;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblFoto;
     private javax.swing.JMenu mAjuda;
     private javax.swing.JMenu mMenu;
     private javax.swing.JMenuItem miCadFuncionario;
