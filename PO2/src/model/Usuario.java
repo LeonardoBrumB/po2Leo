@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Date;
+import javax.swing.Icon;
 
 public class Usuario {
 
@@ -9,16 +10,19 @@ public class Usuario {
     private String email;
     private String senha;
     private Date dataNasc;
+    private Icon imagem;
+    private boolean funcionario;
 
     public Usuario() {
     }
 
-    public Usuario(long pkUsuario, String nome, String email, String senha, Date dataNasc) {
+    public Usuario(long pkUsuario, String nome, String email, String senha, Date dataNasc, boolean funcionario) {
         this.pkUsuario = pkUsuario;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.dataNasc = dataNasc;
+        this.funcionario = funcionario;
     }
 
     public long getPkUsuario() {
@@ -59,6 +63,22 @@ public class Usuario {
 
     public void setDataNasc(Date datanasc) {
         this.dataNasc = datanasc;
+    }
+
+    public boolean getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(boolean funcionario) {
+        this.funcionario = funcionario;
+    }
+
+    public Icon getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(Icon imagem) {
+        this.imagem = imagem;
     }
 
 }

@@ -17,7 +17,7 @@ import utils.Utils;
  *
  * @author aluno.saolucas
  */
-public class FRUPDUsuario extends javax.swing.JDialog {
+public class FRUPDFuncionario extends javax.swing.JDialog {
 
     private int pkUsuario;
     private String senhaUsuario;
@@ -37,9 +37,10 @@ public class FRUPDUsuario extends javax.swing.JDialog {
     /**
      * Creates new form FRUPDUsuario
      */
-    public FRUPDUsuario(java.awt.Frame parent, boolean modal) {
+    public FRUPDFuncionario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -52,28 +53,82 @@ public class FRUPDUsuario extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        btDeletar = new javax.swing.JButton();
+        lbTitulo = new javax.swing.JLabel();
+        btCancelar = new javax.swing.JButton();
+        lbNome = new javax.swing.JLabel();
+        lbConfSenha = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
         txtConfSenha = new javax.swing.JPasswordField();
-        lbFoto = new javax.swing.JLabel();
         lbEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         lbSenha = new javax.swing.JLabel();
         lbDataNasc = new javax.swing.JLabel();
-        btDeletar = new javax.swing.JButton();
         txtSenha = new javax.swing.JPasswordField();
-        lbTitulo = new javax.swing.JLabel();
         ftxtDataNasc = new javax.swing.JFormattedTextField();
-        btCancelar = new javax.swing.JButton();
         btSalvar = new javax.swing.JButton();
-        lbNome = new javax.swing.JLabel();
         lbCodigo = new javax.swing.JLabel();
-        lbConfSenha = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
-        txtNome = new javax.swing.JTextField();
         btAlterarSenha = new javax.swing.JButton();
+        lbFoto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
+
+        btDeletar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/3844425_can_trash_icon (1).png"))); // NOI18N
+        btDeletar.setText("Deletar");
+        btDeletar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btDeletarMouseClicked(evt);
+            }
+        });
+        btDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeletarActionPerformed(evt);
+            }
+        });
+        btDeletar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btDeletarKeyPressed(evt);
+            }
+        });
+
+        lbTitulo.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        lbTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone editar usuario.png"))); // NOI18N
+        lbTitulo.setText("Alterar de funcionário");
+
+        btCancelar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        btCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/326554_cancel_icon.png"))); // NOI18N
+        btCancelar.setText("Cancelar");
+        btCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btCancelarMouseClicked(evt);
+            }
+        });
+        btCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarActionPerformed(evt);
+            }
+        });
+
+        lbNome.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbNome.setText("Nome:");
+
+        lbConfSenha.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbConfSenha.setText("Confirmar senha:");
+
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNomeKeyPressed(evt);
+            }
+        });
 
         txtConfSenha.setEditable(false);
         txtConfSenha.setBackground(new java.awt.Color(124, 124, 124));
@@ -82,8 +137,6 @@ public class FRUPDUsuario extends javax.swing.JDialog {
                 txtConfSenhaKeyPressed(evt);
             }
         });
-
-        lbFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lbEmail.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lbEmail.setText("Email:");
@@ -105,24 +158,6 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         lbDataNasc.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lbDataNasc.setText("Data de Nascimento:");
 
-        btDeletar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        btDeletar.setText("Deletar");
-        btDeletar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btDeletarMouseClicked(evt);
-            }
-        });
-        btDeletar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btDeletarActionPerformed(evt);
-            }
-        });
-        btDeletar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btDeletarKeyPressed(evt);
-            }
-        });
-
         txtSenha.setEditable(false);
         txtSenha.setBackground(new java.awt.Color(125, 125, 125));
         txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -131,10 +166,6 @@ public class FRUPDUsuario extends javax.swing.JDialog {
             }
         });
 
-        lbTitulo.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
-        lbTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone editar usuario.png"))); // NOI18N
-        lbTitulo.setText("Alterar de usuário");
-
         ftxtDataNasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM))));
         ftxtDataNasc.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -142,20 +173,8 @@ public class FRUPDUsuario extends javax.swing.JDialog {
             }
         });
 
-        btCancelar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        btCancelar.setText("Cancelar");
-        btCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btCancelarMouseClicked(evt);
-            }
-        });
-        btCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCancelarActionPerformed(evt);
-            }
-        });
-
         btSalvar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        btSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/326688_floppy_save_guardar_icon (1).png"))); // NOI18N
         btSalvar.setText(" Salvar");
         btSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -173,14 +192,8 @@ public class FRUPDUsuario extends javax.swing.JDialog {
             }
         });
 
-        lbNome.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lbNome.setText("Nome:");
-
         lbCodigo.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lbCodigo.setText("Código:");
-
-        lbConfSenha.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lbConfSenha.setText("Confirmar senha:");
 
         txtCodigo.setEditable(false);
         txtCodigo.setBackground(new java.awt.Color(124, 124, 124));
@@ -192,17 +205,6 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         txtCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCodigoKeyPressed(evt);
-            }
-        });
-
-        txtNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeActionPerformed(evt);
-            }
-        });
-        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNomeKeyPressed(evt);
             }
         });
 
@@ -219,12 +221,14 @@ public class FRUPDUsuario extends javax.swing.JDialog {
             }
         });
 
+        lbFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(84, Short.MAX_VALUE)
+                .addContainerGap(85, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbNome)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -258,20 +262,22 @@ public class FRUPDUsuario extends javax.swing.JDialog {
                         .addComponent(btAlterarSenha)))
                 .addGap(29, 29, 29))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(217, 217, 217)
+                .addGap(192, 192, 192)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbTitulo)
-                    .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(31, 31, 31)
                 .addComponent(lbTitulo)
-                .addGap(18, 18, 18)
-                .addComponent(lbFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
+                .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbCodigo, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -315,11 +321,49 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btDeletarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDeletarMouseClicked
+        int resposta = JOptionPane.showConfirmDialog(null, "Deseja excluir o usuário?",
+                "Confirmação", JOptionPane.YES_NO_OPTION);
+        if (resposta == JOptionPane.YES_NO_OPTION) {
+            UsuarioController controller = new UsuarioController();
+            if (controller.excluirUsuario(pkUsuario)) {
+                this.dispose();
+            }
+        }
+
+    }//GEN-LAST:event_btDeletarMouseClicked
+
+    private void btDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btDeletarActionPerformed
+
+    private void btDeletarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btDeletarKeyPressed
+
+    }//GEN-LAST:event_btDeletarKeyPressed
+
+    private void btCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCancelarMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_btCancelarMouseClicked
+
+    private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
+
+    }//GEN-LAST:event_btCancelarActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtNome.requestFocus();
+        }
+    }//GEN-LAST:event_txtNomeKeyPressed
 
     private void txtConfSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfSenhaKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -337,25 +381,6 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtEmailKeyPressed
 
-    private void btDeletarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDeletarMouseClicked
-        int resposta = JOptionPane.showConfirmDialog(null, "Deseja excluir o usuário?",
-                "Confirmação", JOptionPane.YES_NO_OPTION);
-        if (resposta == JOptionPane.YES_NO_OPTION) {
-            UsuarioController controller = new UsuarioController();
-            if (controller.excluirUsuario(pkUsuario)) {
-                this.dispose();
-            }
-        }
-    }//GEN-LAST:event_btDeletarMouseClicked
-
-    private void btDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btDeletarActionPerformed
-
-    private void btDeletarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btDeletarKeyPressed
-
-    }//GEN-LAST:event_btDeletarKeyPressed
-
     private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             txtSenha.requestFocus();
@@ -367,14 +392,6 @@ public class FRUPDUsuario extends javax.swing.JDialog {
             ftxtDataNasc.requestFocus();
         }
     }//GEN-LAST:event_ftxtDataNascKeyPressed
-
-    private void btCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCancelarMouseClicked
-        this.dispose();
-    }//GEN-LAST:event_btCancelarMouseClicked
-
-    private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
-
-    }//GEN-LAST:event_btCancelarActionPerformed
 
     private void btSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSalvarMouseClicked
         if (verificarCampos() == false) {
@@ -425,15 +442,9 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoKeyPressed
 
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+    private void btAlterarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
-
-    private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtNome.requestFocus();
-        }
-    }//GEN-LAST:event_txtNomeKeyPressed
+    }//GEN-LAST:event_btAlterarSenhaActionPerformed
 
     private void btAlterarSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAlterarSenhaMouseClicked
         if (btAlterarSenha.getText().equals("Alterar senha")) {
@@ -455,10 +466,6 @@ public class FRUPDUsuario extends javax.swing.JDialog {
             txtConfSenha.setText(getSenhaUsuario());
         }
     }//GEN-LAST:event_btAlterarSenhaMouseClicked
-
-    private void btAlterarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btAlterarSenhaActionPerformed
 
     private boolean verificarCampos() {
         if (txtNome.getText().equals("")) {
@@ -509,6 +516,21 @@ public class FRUPDUsuario extends javax.swing.JDialog {
 
     }
 
+    public void carregarUsuario() {
+        UsuarioController controller = new UsuarioController();
+        Usuario usu = controller.readForPk(pkUsuario);
+
+        String codigo = String.valueOf(usu.getPkUsuario());
+
+        txtCodigo.setText(codigo);
+        txtNome.setText(usu.getNome());
+        txtEmail.setText(usu.getEmail());
+        ftxtDataNasc.setText(Utils.converterDateToString(usu.getDataNasc()));
+        txtSenha.setText(usu.getSenha());
+        txtConfSenha.setText(usu.getSenha());
+        setSenhaUsuario(usu.getSenha());
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -526,20 +548,21 @@ public class FRUPDUsuario extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FRUPDUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FRUPDFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FRUPDUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FRUPDFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FRUPDUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FRUPDFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FRUPDUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FRUPDFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                FRUPDUsuario dialog = new FRUPDUsuario(new javax.swing.JFrame(), true);
+                FRUPDFuncionario dialog = new FRUPDFuncionario(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

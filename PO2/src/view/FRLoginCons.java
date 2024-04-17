@@ -135,6 +135,7 @@ public class FRLoginCons extends javax.swing.JDialog {
 
     private void btnVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVoltarMouseClicked
          this.dispose();
+         new FRMenu().setVisible(true);
     }//GEN-LAST:event_btnVoltarMouseClicked
 
     private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
