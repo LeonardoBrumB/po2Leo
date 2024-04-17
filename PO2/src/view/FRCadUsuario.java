@@ -72,6 +72,11 @@ public class FRCadUsuario extends javax.swing.JDialog {
 
         btLogin.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btLogin.setText("Login");
+        btLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btLoginMouseClicked(evt);
+            }
+        });
 
         lbEmail.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lbEmail.setText("Email:");
@@ -199,6 +204,11 @@ public class FRCadUsuario extends javax.swing.JDialog {
             new FRAutenticacao().setVisible(true);
         }
     }//GEN-LAST:event_btSalvarMouseClicked
+
+    private void btLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLoginMouseClicked
+        this.dispose();
+        new FRAutenticacao().setVisible(true);
+    }//GEN-LAST:event_btLoginMouseClicked
 
     private boolean verificarCampos() {
         if (txtNome.getText().equals("")) {
