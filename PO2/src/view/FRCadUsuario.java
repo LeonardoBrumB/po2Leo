@@ -292,6 +292,11 @@ public class FRCadUsuario extends javax.swing.JDialog {
 
         btLogin.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btLogin.setText("Login");
+        btLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btLoginMouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone pessoa.png"))); // NOI18N
