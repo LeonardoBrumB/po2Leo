@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import model.Funcionario;
+import model.Usuario;
 import utils.Utils;
 
 /**
@@ -51,7 +51,6 @@ public class FRCadFuncionario extends javax.swing.JDialog {
         lbSenha = new javax.swing.JLabel();
         lbDataNasc = new javax.swing.JLabel();
         txtSenha = new javax.swing.JPasswordField();
-        cbAtivo = new javax.swing.JCheckBox();
         ftxtDataNasc = new javax.swing.JFormattedTextField();
         btSalvar = new javax.swing.JButton();
         btLogin = new javax.swing.JButton();
@@ -108,15 +107,6 @@ public class FRCadFuncionario extends javax.swing.JDialog {
         txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtSenhaKeyPressed(evt);
-            }
-        });
-
-        cbAtivo.setBackground(new java.awt.Color(0, 235, 239));
-        cbAtivo.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        cbAtivo.setText("Ativo");
-        cbAtivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbAtivoActionPerformed(evt);
             }
         });
 
@@ -203,8 +193,6 @@ public class FRCadFuncionario extends javax.swing.JDialog {
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(lbDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cbAtivo)
                                     .addGap(52, 52, 52))))
                         .addGap(149, 149, 149))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -244,10 +232,8 @@ public class FRCadFuncionario extends javax.swing.JDialog {
                 .addGap(8, 8, 8)
                 .addComponent(lbDataNasc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ftxtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbAtivo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(ftxtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSalvar)
                     .addComponent(btLogin))
@@ -276,10 +262,6 @@ public class FRCadFuncionario extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void cbAtivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAtivoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbAtivoActionPerformed
-
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
 
     }//GEN-LAST:event_btLoginActionPerformed
@@ -295,19 +277,20 @@ public class FRCadFuncionario extends javax.swing.JDialog {
         }
 
         //salvar
-        Funcionario func = new Funcionario();
-        func.setNomeF(txtNome.getText());
-        func.setEmailF(txtEmail.getText());
+        Usuario u = new Usuario();
+        u.setNome(txtNome.getText());
+        u.setEmail(txtEmail.getText());
+        u.setFuncionario(true);
         
         String senha = new String(txtSenha.getPassword());
         senha = Utils.calcularMD5(senha);
-        func.setSenhaF(senha);
+        u.setSenha(senha);
         
         Date data = Utils.converterStringToDate(ftxtDataNasc.getText());
-        func.setDataNascF(data);
+        u.setDataNasc(data);
         
         UsuarioController controller = new UsuarioController();
-        if (controller.adicionarFuncionario(func)) {
+        if (controller.adicionarUsuario(u)) {
             this.dispose();
             new FRAutenticacao().setVisible(true);
         }
@@ -469,7 +452,6 @@ public class FRCadFuncionario extends javax.swing.JDialog {
     private javax.swing.JButton btLogin;
     private javax.swing.JButton btSalvar;
     private javax.swing.JButton btnEcolherImagen;
-    private javax.swing.JCheckBox cbAtivo;
     private javax.swing.JFormattedTextField ftxtDataNasc;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

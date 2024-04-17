@@ -2,7 +2,6 @@ package controller;
 
 import java.util.List;
 import javax.swing.JOptionPane;
-import model.Funcionario;
 import model.Usuario;
 import model.UsuarioDAO;
 
@@ -47,31 +46,22 @@ public class UsuarioController {
         return usu;
     }
 
-    public boolean alterarFuncionario(Funcionario func) {
-        if (usuarioDAO.alterarFuncionario(func)) {
+    public boolean alterarUsuario(Usuario usu) {
+        if (usuarioDAO.alterarUsuario(usu)) {
             return true;
         } else {
             JOptionPane.showMessageDialog(null, "Usuário não pôde ser editado");
             return false;
         }
     }
-    
-    public boolean excluirUsuario(int pkUsuario){
-        if(usuarioDAO.excluirUsuario(pkUsuario)){
+
+    public boolean excluirUsuario(int pkUsuario) {
+        if (usuarioDAO.excluirUsuario(pkUsuario)) {
             return true;
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Usuário não excluído");
             return false;
         }
-        
-    }
-    public boolean adicionarFuncionario(Funcionario func) {
-        if (usuarioDAO.adicionarFuncionario(func)) {
-            return true;
-        } else {
-            JOptionPane.showMessageDialog(null, "Funcionário não cadastrado");
-            return false;
-        }
+
     }
 }
- 

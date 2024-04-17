@@ -6,8 +6,14 @@
 package view;
 
 import controller.UsuarioController;
+import java.awt.event.KeyEvent;
+import java.io.File;
 import java.util.Date;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import model.Usuario;
 import utils.Utils;
 
@@ -35,32 +41,246 @@ public class FRCadUsuario extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        lbTitulo = new javax.swing.JLabel();
+        lbNome1 = new javax.swing.JLabel();
+        txtNome1 = new javax.swing.JTextField();
+        lbEmail1 = new javax.swing.JLabel();
+        txtEmail1 = new javax.swing.JTextField();
+        lbSenha1 = new javax.swing.JLabel();
+        lbDataNasc1 = new javax.swing.JLabel();
+        txtSenha1 = new javax.swing.JPasswordField();
+        cbAtivo = new javax.swing.JCheckBox();
+        ftxtDataNasc1 = new javax.swing.JFormattedTextField();
+        btSalvar1 = new javax.swing.JButton();
+        btLogin1 = new javax.swing.JButton();
+        lbConfSenha1 = new javax.swing.JLabel();
+        txtConfSenha1 = new javax.swing.JPasswordField();
+        lblFoto = new javax.swing.JLabel();
+        btnEcolherImagen = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        lbDataNasc = new javax.swing.JLabel();
-        txtSenha = new javax.swing.JPasswordField();
-        lbConfSenha = new javax.swing.JLabel();
-        ftxtDataNasc = new javax.swing.JFormattedTextField();
-        txtNome = new javax.swing.JTextField();
         btSalvar = new javax.swing.JButton();
-        txtConfSenha = new javax.swing.JPasswordField();
         btLogin = new javax.swing.JButton();
-        lbEmail = new javax.swing.JLabel();
-        lbNome = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnEcolherImagen1 = new javax.swing.JButton();
+        lbNome = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        lbEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         lbSenha = new javax.swing.JLabel();
+        txtSenha = new javax.swing.JPasswordField();
+        lbConfSenha = new javax.swing.JLabel();
+        txtConfSenha = new javax.swing.JPasswordField();
+        lbDataNasc = new javax.swing.JLabel();
+        ftxtDataNasc = new javax.swing.JFormattedTextField();
+
+        jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jPanel2.setBackground(new java.awt.Color(0, 235, 239));
+
+        lbTitulo.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        lbTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone pessoa.png"))); // NOI18N
+        lbTitulo.setText("Cadastro de Funcionário");
+
+        lbNome1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbNome1.setText("Nome:");
+
+        txtNome1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNome1ActionPerformed(evt);
+            }
+        });
+        txtNome1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNome1KeyPressed(evt);
+            }
+        });
+
+        lbEmail1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbEmail1.setText("Email:");
+
+        txtEmail1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmail1ActionPerformed(evt);
+            }
+        });
+        txtEmail1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmail1KeyPressed(evt);
+            }
+        });
+
+        lbSenha1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbSenha1.setText("Senha:");
+
+        lbDataNasc1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbDataNasc1.setText("Data de Nascimento:");
+
+        txtSenha1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenha1KeyPressed(evt);
+            }
+        });
+
+        cbAtivo.setBackground(new java.awt.Color(0, 235, 239));
+        cbAtivo.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        cbAtivo.setText("Ativo");
+        cbAtivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbAtivoActionPerformed(evt);
+            }
+        });
+
+        ftxtDataNasc1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM))));
+        ftxtDataNasc1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ftxtDataNasc1KeyPressed(evt);
+            }
+        });
+
+        btSalvar1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        btSalvar1.setText(" Salvar");
+        btSalvar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btSalvar1MouseClicked(evt);
+            }
+        });
+        btSalvar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSalvar1ActionPerformed(evt);
+            }
+        });
+        btSalvar1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btSalvar1KeyPressed(evt);
+            }
+        });
+
+        btLogin1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        btLogin1.setText("Cancelar");
+        btLogin1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btLogin1MouseClicked(evt);
+            }
+        });
+        btLogin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLogin1ActionPerformed(evt);
+            }
+        });
+
+        lbConfSenha1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbConfSenha1.setText("Confirmar senha:");
+
+        txtConfSenha1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtConfSenha1KeyPressed(evt);
+            }
+        });
+
+        lblFoto.setBackground(new java.awt.Color(204, 204, 204));
+        lblFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        btnEcolherImagen.setText("Escolher Imagen");
+        btnEcolherImagen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEcolherImagenMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(164, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbNome1)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btnEcolherImagen))
+                                .addComponent(txtNome1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbEmail1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtEmail1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lbSenha1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtSenha1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lbConfSenha1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtConfSenha1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(lbDataNasc1, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(ftxtDataNasc1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbAtivo)
+                                    .addGap(52, 52, 52))))
+                        .addGap(149, 149, 149))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(128, 128, 128)
+                        .addComponent(btSalvar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(191, 191, 191))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(lbTitulo)
+                        .addGap(195, 195, 195))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(lbTitulo)
+                .addGap(55, 55, 55)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEcolherImagen))
+                .addGap(29, 29, 29)
+                .addComponent(lbNome1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(lbEmail1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(lbSenha1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(lbConfSenha1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtConfSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(lbDataNasc1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ftxtDataNasc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbAtivo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btSalvar1)
+                    .addComponent(btLogin1))
+                .addGap(43, 43, 43))
+        );
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
-
-        lbDataNasc.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lbDataNasc.setText("Data de Nascimento:");
-
-        lbConfSenha.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lbConfSenha.setText("Confirmar senha:");
-
-        ftxtDataNasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM))));
 
         btSalvar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btSalvar.setText(" Salvar");
@@ -73,87 +293,138 @@ public class FRCadUsuario extends javax.swing.JDialog {
         btLogin.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btLogin.setText("Login");
 
-        lbEmail.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lbEmail.setText("Email:");
-
-        lbNome.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lbNome.setText("Nome:");
-
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone pessoa.png"))); // NOI18N
         jLabel1.setText("Cadastro de Usuário");
 
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        btnEcolherImagen1.setText("Escolher Imagen");
+        btnEcolherImagen1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEcolherImagen1MouseClicked(evt);
+            }
+        });
+
+        lbNome.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbNome.setText("Nome:");
+
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNomeKeyPressed(evt);
+            }
+        });
+
+        lbEmail.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbEmail.setText("Email:");
+
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
+        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmailKeyPressed(evt);
+            }
+        });
+
         lbSenha.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lbSenha.setText("Senha:");
+
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
+            }
+        });
+
+        lbConfSenha.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbConfSenha.setText("Confirmar senha:");
+
+        txtConfSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtConfSenhaKeyPressed(evt);
+            }
+        });
+
+        lbDataNasc.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbDataNasc.setText("Data de Nascimento:");
+
+        ftxtDataNasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM))));
+        ftxtDataNasc.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ftxtDataNascKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbSenha)
-                            .addComponent(lbConfSenha)
-                            .addComponent(lbEmail))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEmail)
-                            .addComponent(txtSenha)
-                            .addComponent(txtConfSenha)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(lbNome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNome)))
-                .addGap(130, 130, 130))
+                .addGap(255, 255, 255)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnEcolherImagen1)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
+                .addContainerGap(147, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(206, 206, 206))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbDataNasc)
-                            .addComponent(btLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(ftxtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(279, 279, 279))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btSalvar)
-                                .addGap(144, 144, 144))))))
+                    .addComponent(lbNome)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lbSenha, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lbConfSenha, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtConfSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(206, 206, 206))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(btLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(216, 216, 216)
+                            .addComponent(btSalvar)
+                            .addGap(144, 144, 144)))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(jLabel1)
-                .addGap(50, 50, 50)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbNome)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbEmail))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbSenha))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbConfSenha)
-                    .addComponent(txtConfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbDataNasc)
-                    .addComponent(ftxtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEcolherImagen1))
+                .addGap(33, 33, 33)
+                .addComponent(lbNome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(lbEmail)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(lbSenha)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(lbConfSenha)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtConfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(lbDataNasc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ftxtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btLogin)
@@ -199,6 +470,170 @@ public class FRCadUsuario extends javax.swing.JDialog {
             new FRAutenticacao().setVisible(true);
         }
     }//GEN-LAST:event_btSalvarMouseClicked
+
+    private void txtNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNome1ActionPerformed
+
+    private void txtNome1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNome1KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtNome.requestFocus();
+        }
+    }//GEN-LAST:event_txtNome1KeyPressed
+
+    private void txtEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmail1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmail1ActionPerformed
+
+    private void txtEmail1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmail1KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtEmail.requestFocus();
+        }
+    }//GEN-LAST:event_txtEmail1KeyPressed
+
+    private void txtSenha1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenha1KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtSenha.requestFocus();
+        }
+    }//GEN-LAST:event_txtSenha1KeyPressed
+
+    private void cbAtivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAtivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbAtivoActionPerformed
+
+    private void ftxtDataNasc1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ftxtDataNasc1KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            ftxtDataNasc.requestFocus();
+        }
+    }//GEN-LAST:event_ftxtDataNasc1KeyPressed
+
+    private void btSalvar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSalvar1MouseClicked
+        //verificar
+        if (verificarCampos() == false) {
+            return;
+        }
+
+        //salvar
+        Usuario usu = new Usuario();
+        usu.setNome(txtNome.getText());
+        usu.setEmail(txtEmail.getText());
+        usu.setFuncionario(false);
+
+        String senha = new String(txtSenha.getPassword());
+        senha = Utils.calcularMD5(senha);
+        usu.setSenha(senha);
+
+        Date data = Utils.converterStringToDate(ftxtDataNasc.getText());
+        usu.setDataNasc(data);
+
+        UsuarioController controller = new UsuarioController();
+        if (controller.adicionarUsuario(usu)) {
+            this.dispose();
+            new FRAutenticacao().setVisible(true);
+        }
+    }//GEN-LAST:event_btSalvar1MouseClicked
+
+    private void btSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btSalvar1ActionPerformed
+
+    private void btSalvar1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btSalvar1KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            btSalvarMouseClicked(null);
+        }
+    }//GEN-LAST:event_btSalvar1KeyPressed
+
+    private void btLogin1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLogin1MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_btLogin1MouseClicked
+
+    private void btLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLogin1ActionPerformed
+
+    }//GEN-LAST:event_btLogin1ActionPerformed
+
+    private void txtConfSenha1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfSenha1KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtConfSenha.requestFocus();
+        }
+    }//GEN-LAST:event_txtConfSenha1KeyPressed
+
+    private void btnEcolherImagenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEcolherImagenMouseClicked
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Escolha um arquivo");
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter(
+            "Imagens", "jpg", "jpeg", "png");
+        fileChooser.setFileFilter(filtro);
+
+        fileChooser.setMultiSelectionEnabled(false);
+
+        int returnValue = fileChooser.showOpenDialog(null);
+
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File arquivo = fileChooser.getSelectedFile();
+            Icon icon = Utils.fileParaIcon(arquivo);
+
+            ImageIcon iconRedimensionado = Utils.redimensionarIcon(icon, 140, 140);
+            lblFoto.setIcon(iconRedimensionado);
+        }
+    }//GEN-LAST:event_btnEcolherImagenMouseClicked
+
+    private void btnEcolherImagen1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEcolherImagen1MouseClicked
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Escolha um arquivo");
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter(
+            "Imagens", "jpg", "jpeg", "png");
+        fileChooser.setFileFilter(filtro);
+
+        fileChooser.setMultiSelectionEnabled(false);
+
+        int returnValue = fileChooser.showOpenDialog(null);
+
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File arquivo = fileChooser.getSelectedFile();
+            Icon icon = Utils.fileParaIcon(arquivo);
+
+            ImageIcon iconRedimensionado = Utils.redimensionarIcon(icon, 140, 140);
+            lblFoto.setIcon(iconRedimensionado);
+        }
+    }//GEN-LAST:event_btnEcolherImagen1MouseClicked
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtNome.requestFocus();
+        }
+    }//GEN-LAST:event_txtNomeKeyPressed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtEmail.requestFocus();
+        }
+    }//GEN-LAST:event_txtEmailKeyPressed
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtSenha.requestFocus();
+        }
+    }//GEN-LAST:event_txtSenhaKeyPressed
+
+    private void txtConfSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfSenhaKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtConfSenha.requestFocus();
+        }
+    }//GEN-LAST:event_txtConfSenhaKeyPressed
+
+    private void ftxtDataNascKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ftxtDataNascKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            ftxtDataNasc.requestFocus();
+        }
+    }//GEN-LAST:event_ftxtDataNascKeyPressed
 
     private boolean verificarCampos() {
         if (txtNome.getText().equals("")) {
@@ -293,18 +728,38 @@ public class FRCadUsuario extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btLogin;
+    private javax.swing.JButton btLogin1;
     private javax.swing.JButton btSalvar;
+    private javax.swing.JButton btSalvar1;
+    private javax.swing.JButton btnEcolherImagen;
+    private javax.swing.JButton btnEcolherImagen1;
+    private javax.swing.JCheckBox cbAtivo;
     private javax.swing.JFormattedTextField ftxtDataNasc;
+    private javax.swing.JFormattedTextField ftxtDataNasc1;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lbConfSenha;
+    private javax.swing.JLabel lbConfSenha1;
     private javax.swing.JLabel lbDataNasc;
+    private javax.swing.JLabel lbDataNasc1;
     private javax.swing.JLabel lbEmail;
+    private javax.swing.JLabel lbEmail1;
     private javax.swing.JLabel lbNome;
+    private javax.swing.JLabel lbNome1;
     private javax.swing.JLabel lbSenha;
+    private javax.swing.JLabel lbSenha1;
+    private javax.swing.JLabel lbTitulo;
+    private javax.swing.JLabel lblFoto;
     private javax.swing.JPasswordField txtConfSenha;
+    private javax.swing.JPasswordField txtConfSenha1;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtEmail1;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNome1;
     private javax.swing.JPasswordField txtSenha;
+    private javax.swing.JPasswordField txtSenha1;
     // End of variables declaration//GEN-END:variables
 }

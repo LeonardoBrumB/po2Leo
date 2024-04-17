@@ -208,7 +208,7 @@ public class FRConsUsuario extends javax.swing.JDialog {
             int pk = Integer.parseInt(tbUsuario.getValueAt(tbUsuario.getSelectedRow(), 0).toString());
             
             //Criar tela e carregar os dados do usuário
-            FRUPDUsuario telaUPD = new FRUPDUsuario(null, rootPaneCheckingEnabled);
+            FRUPDFuncionario telaUPD = new FRUPDFuncionario(null, rootPaneCheckingEnabled);
             telaUPD.setPkUsuario(pk);
             telaUPD.carregarUsuario();
             telaUPD.setVisible(true);
