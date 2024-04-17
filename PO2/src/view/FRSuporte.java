@@ -75,6 +75,11 @@ public class FRSuporte extends javax.swing.JDialog {
 
         btCancelar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btCancelar.setText("Cancelar");
+        btCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btCancelarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -279,6 +284,10 @@ public class FRSuporte extends javax.swing.JDialog {
         this.dispose();
         new FRLoginCons(null, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miAreaFuncionarioActionPerformed
+
+    private void btCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCancelarMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_btCancelarMouseClicked
 
     /**
      * @param args the command line arguments
