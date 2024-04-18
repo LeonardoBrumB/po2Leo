@@ -64,4 +64,12 @@ public class UsuarioController {
         }
 
     }
+
+//    public boolean verificarFuncionario() {
+//        if (usuarioDAO.verificarFuncionario()) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
 }

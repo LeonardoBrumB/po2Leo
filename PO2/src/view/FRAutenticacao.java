@@ -15,6 +15,16 @@ import javax.swing.JOptionPane;
  */
 public class FRAutenticacao extends javax.swing.JFrame {
 
+    private String login;
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
     /**
      * Creates new form FRAutenticacao
      */
@@ -211,10 +221,18 @@ public class FRAutenticacao extends javax.swing.JFrame {
         String hash = utils.Utils.calcularMD5(senha);
 
         UsuarioController controller = new UsuarioController();
+//        Dados dados = new Dados();
         if (controller.autenticar(txtLogin.getText(), hash) == true) {
-            //logar
-            this.dispose();
-            new FRMenu().setVisible(true);
+            login = txtLogin.getText();
+            
+//            logar
+//            if (dados.verificarFuncionario() == true) {
+//                this.dispose();
+//                new FRMenuFuncionario(this, rootPaneCheckingEnabled).setVisible(true);
+//            } else {
+//                this.dispose();
+//                new FRMenu().setVisible(true);
+//            }
 
         }
     }
