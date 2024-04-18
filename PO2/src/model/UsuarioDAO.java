@@ -14,7 +14,7 @@ import utils.Utils;
 
 public class UsuarioDAO {
 
-    public boolean autenticar(String email, String senha) {
+    public Usuario autenticar(String email) {
         String sql = "SELECT * from TBUSUARIO WHERE email = ? and senha = ?";
 
         GerenciadorConexao gerenciador = new GerenciadorConexao();
@@ -22,13 +22,20 @@ public class UsuarioDAO {
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
+        Usuario usu = new Usuario();
         try {
             stmt = con.prepareStatement(sql);
             stmt.setString(1, email);
-            stmt.setString(2, senha);
+//            stmt.setString(2, senha);
             rs = stmt.executeQuery();
             if (rs.next()) {
-                return true;
+                //preenche o usuário
+                usu.setPkUsuario(rs.getLong("pkusuario"));
+                usu.setNome(rs.getString("nome"));
+                usu.setEmail(rs.getString("email"));
+                usu.setSenha(rs.getString("senha"));
+                usu.setDataNasc(rs.getDate("datanasc"));
+//                usu.getImagem(rs.getIcon("imagem"));
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -36,7 +43,7 @@ public class UsuarioDAO {
         } finally {
             gerenciador.closeConnection(stmt, rs);
         }
-        return false;
+        return usu;
     }
 
     public boolean adicionarUsuario(Usuario u) {
@@ -193,36 +200,4 @@ public class UsuarioDAO {
         }
         return false;
     }
-
-//    public Dados verificarFuncionario() {
-//        String sql = "SELECT * FROM tbusuario WHERE pkusuario =?";
-//
-//        GerenciadorConexao gerenciador = new GerenciadorConexao();
-//        Connection con = gerenciador.getConexao();
-//        PreparedStatement stmt = null;
-//        ResultSet rs = null;
-//        Usuario usuario = new Usuario();
-//
-//        try {
-//            stmt = con.prepareStatement(sql);
-//            stmt.setLong(1, pk);
-//
-//            rs = stmt.executeQuery();
-//            if (rs.next()) {
-//                usuario.setPkUsuario(rs.getLong("pkusuario"));
-//                usuario.setNome(rs.getString("nome"));
-//                usuario.setEmail(rs.getString("email"));
-//                usuario.setSenha(rs.getString("senha"));
-//                usuario.setDataNasc(rs.getDate("datanasc"));
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-//
-//        } finally {
-//            gerenciador.closeConnection(stmt, rs);
-//        }
-//        return usuario;
-//
-//    }
-
 }

@@ -14,15 +14,14 @@ public class UsuarioController {
 
     }
 
-    public boolean autenticar(String email, String senha) {
-        if (usuarioDAO.autenticar(email, senha)) {
-            return true;
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Usuário ou senha incorreto");
-            return false;
-        }
-    }
+//    public boolean autenticar(String email, String senha) {
+//        if (usuarioDAO.autenticar(email, senha)) {
+//            return true;
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Usuário ou senha incorreto");
+//            return false;
+//        }
+//    }
 
     public boolean adicionarUsuario(Usuario u) {
         if (usuarioDAO.adicionarUsuario(u)) {
@@ -64,12 +63,4 @@ public class UsuarioController {
         }
 
     }
-
-//    public boolean verificarFuncionario() {
-//        if (usuarioDAO.verificarFuncionario()) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
 }

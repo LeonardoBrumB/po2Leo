@@ -8,6 +8,7 @@ package view;
 import controller.UsuarioController;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import model.Usuario;
 
 /**
  *
@@ -221,20 +222,15 @@ public class FRAutenticacao extends javax.swing.JFrame {
         String hash = utils.Utils.calcularMD5(senha);
 
         UsuarioController controller = new UsuarioController();
-//        Dados dados = new Dados();
-        if (controller.autenticar(txtLogin.getText(), hash) == true) {
-            login = txtLogin.getText();
-            
-//            logar
-//            if (dados.verificarFuncionario() == true) {
-//                this.dispose();
-//                new FRMenuFuncionario(this, rootPaneCheckingEnabled).setVisible(true);
-//            } else {
-//                this.dispose();
-//                new FRMenu().setVisible(true);
-//            }
-
-        }
+////        Usuario usu = controller.autenticar(txtLogin.getText(), hash);
+//        
+//        if (usu.getFuncionario() == true) {
+//            this.dispose();
+//            new FRMenuFuncionario(this, rootPaneCheckingEnabled).setVisible(true);
+//        } else {
+//            this.dispose();
+//            new FRMenu().setVisible(true);
+//        }
     }
 
     /**
