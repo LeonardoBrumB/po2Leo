@@ -61,7 +61,6 @@ public class FRCadUsuario extends javax.swing.JDialog {
         btnEcolherImagen = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         btSalvar = new javax.swing.JButton();
-        btLogin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnEcolherImagen1 = new javax.swing.JButton();
@@ -75,6 +74,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
         txtConfSenha = new javax.swing.JPasswordField();
         lbDataNasc = new javax.swing.JLabel();
         ftxtDataNasc = new javax.swing.JFormattedTextField();
+        btVoltar = new javax.swing.JButton();
 
         jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -290,14 +290,6 @@ public class FRCadUsuario extends javax.swing.JDialog {
             }
         });
 
-        btLogin.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        btLogin.setText("Login");
-        btLogin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btLoginMouseClicked(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone pessoa.png"))); // NOI18N
         jLabel1.setText("Cadastro de Usuário");
@@ -367,16 +359,18 @@ public class FRCadUsuario extends javax.swing.JDialog {
             }
         });
 
+        btVoltar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        btVoltar.setText("Voltar");
+        btVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btVoltarMouseClicked1(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(255, 255, 255)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnEcolherImagen1)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(147, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,22 +385,30 @@ public class FRCadUsuario extends javax.swing.JDialog {
                         .addComponent(txtConfSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lbDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(206, 206, 206))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(btLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(216, 216, 216)
-                            .addComponent(btSalvar)
-                            .addGap(144, 144, 144)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(btVoltar)
+                        .addGap(204, 204, 204)
+                        .addComponent(btSalvar)))
+                .addGap(126, 126, 126))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(255, 255, 255)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnEcolherImagen1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(jLabel1)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(47, 47, 47)
                 .addComponent(jLabel1)
-                .addGap(41, 41, 41)
+                .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEcolherImagen1))
@@ -430,10 +432,10 @@ public class FRCadUsuario extends javax.swing.JDialog {
                 .addComponent(lbDataNasc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ftxtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btLogin)
-                    .addComponent(btSalvar))
+                    .addComponent(btSalvar)
+                    .addComponent(btVoltar))
                 .addGap(42, 42, 42))
         );
 
@@ -640,6 +642,10 @@ public class FRCadUsuario extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_ftxtDataNascKeyPressed
 
+    private void btVoltarMouseClicked1(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVoltarMouseClicked1
+        this.dispose();
+    }//GEN-LAST:event_btVoltarMouseClicked1
+
     private boolean verificarCampos() {
         if (txtNome.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Campo 'Nome' está em branco.");
@@ -732,10 +738,10 @@ public class FRCadUsuario extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btLogin;
     private javax.swing.JButton btLogin1;
     private javax.swing.JButton btSalvar;
     private javax.swing.JButton btSalvar1;
+    private javax.swing.JButton btVoltar;
     private javax.swing.JButton btnEcolherImagen;
     private javax.swing.JButton btnEcolherImagen1;
     private javax.swing.JCheckBox cbAtivo;
