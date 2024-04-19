@@ -37,8 +37,13 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnBotaoEntrar = new javax.swing.JButton();
-        lblFoto = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        lbFoto = new javax.swing.JLabel();
+        lbNome = new javax.swing.JLabel();
+        lbEmail = new javax.swing.JLabel();
+        lbDataNasc = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mMenu = new javax.swing.JMenu();
         miMenuInicial = new javax.swing.JMenuItem();
@@ -54,35 +59,81 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 
-        btnBotaoEntrar.setText("Entrar");
-        btnBotaoEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanel2.setBackground(new java.awt.Color(32, 179, 232));
+
+        lbFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lbNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbNome.setText("Nome");
+        lbNome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnBotaoEntrarMouseClicked(evt);
+                lbNomeMouseClicked(evt);
             }
         });
+
+        lbEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbEmail.setText("E-mail");
+
+        lbDataNasc.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbDataNasc.setText("Data Nascimento");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/saude.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(0, 23, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lbEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                    .addComponent(lbNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(78, 78, 78))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(lbNome)
+                .addGap(18, 18, 18)
+                .addComponent(lbEmail)
+                .addGap(18, 18, 18)
+                .addComponent(lbDataNasc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(57, 57, 57))
+        );
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/medico.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(145, Short.MAX_VALUE)
-                .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(btnBotaoEntrar)
-                .addGap(193, 193, 193))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(222, 222, 222)
-                        .addComponent(btnBotaoEntrar)))
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1))
         );
 
         mMenu.setText("Menu");
@@ -211,28 +262,14 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
         new FRCadFuncionario(null, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miCadFuncionarioActionPerformed
 
-    private void btnBotaoEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBotaoEntrarMouseClicked
-
-
-         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Escolha um arquivo");
-        FileNameExtensionFilter filtro = new FileNameExtensionFilter(
-                "Imagens", "jpg", "jpeg", "png");
-        fileChooser.setFileFilter(filtro);
-        
-        fileChooser.setMultiSelectionEnabled(false);
-        
-        int returnValue = fileChooser.showOpenDialog(null);
-        
-        if (returnValue == JFileChooser.APPROVE_OPTION) {
-            File arquivo = fileChooser.getSelectedFile();
-            Icon icon = Utils.fileParaIcon(arquivo);
-            
-            ImageIcon iconRedimensionado = Utils.redimensionarIcon(icon, 140, 140);
-            lblFoto.setIcon(iconRedimensionado);
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBotaoEntrarMouseClicked
+    private void lbNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbNomeMouseClicked
+        //        Usuario usu = new Usuario();
+        //
+        //        lbNome.setText(usu.getNome());
+        //        lbEmail.setText(usu.getEmail());
+        //        lbDataNasc.setText(usu.getDataNasc());
+        //        lbFoto.setIcon(usu.getImagem);
+    }//GEN-LAST:event_lbNomeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -277,11 +314,16 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBotaoEntrar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblFoto;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lbDataNasc;
+    private javax.swing.JLabel lbEmail;
+    private javax.swing.JLabel lbFoto;
+    private javax.swing.JLabel lbNome;
     private javax.swing.JMenu mAjuda;
     private javax.swing.JMenu mMenu;
     private javax.swing.JMenuItem miCadFuncionario;
