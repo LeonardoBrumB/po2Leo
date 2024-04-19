@@ -63,6 +63,7 @@ public class FRCadFuncionario extends javax.swing.JDialog {
         jLabel6.setText("Senha:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de funcionário");
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 
@@ -189,11 +190,8 @@ public class FRCadFuncionario extends javax.swing.JDialog {
                                 .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lbConfSenha, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtConfSenha, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(lbDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(52, 52, 52))))
+                                .addComponent(lbDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(149, 149, 149))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)

@@ -53,7 +53,7 @@ public class FRAutenticacao extends javax.swing.JFrame {
         btCad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("autenticacao");
+        setTitle("Autenticação");
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 

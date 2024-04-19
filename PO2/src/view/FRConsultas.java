@@ -226,6 +226,7 @@ public class FRConsultas extends javax.swing.JDialog {
         jLabel25.setText("Preço: R$100,00");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Consultas");
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 

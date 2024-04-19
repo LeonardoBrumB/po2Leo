@@ -279,6 +279,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de usuário");
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 

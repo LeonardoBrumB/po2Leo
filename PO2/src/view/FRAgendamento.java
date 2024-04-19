@@ -47,6 +47,7 @@ public class FRAgendamento extends javax.swing.JDialog {
         miAreaFuncionario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Agendamento");
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 

@@ -49,6 +49,7 @@ public class FRLoginCons extends javax.swing.JDialog {
         btnVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Login Consultas");
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 

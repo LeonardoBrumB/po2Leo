@@ -13,6 +13,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="title" type="java.lang.String" value="Cadastro de funcion&#xe1;rio"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -72,13 +73,8 @@
                                   <Component id="txtSenha" alignment="0" max="32767" attributes="0"/>
                                   <Component id="lbConfSenha" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtConfSenha" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="lbDataNasc" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ftxtDataNasc" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="lbDataNasc" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ftxtDataNasc" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>

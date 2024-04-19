@@ -72,6 +72,7 @@ public class FRUPDUsuario extends javax.swing.JDialog {
         btAlterarSenha = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("alterar usuário");
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 
