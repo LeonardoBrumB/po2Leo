@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,12 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import utils.Utils;
 
 public class UsuarioDAO {
 
-    public Usuario autenticar(String email) {
+    public Usuario autenticar(String email, String senha) {
         String sql = "SELECT * from TBUSUARIO WHERE email = ? and senha = ?";
 
         GerenciadorConexao gerenciador = new GerenciadorConexao();
@@ -26,7 +30,7 @@ public class UsuarioDAO {
         try {
             stmt = con.prepareStatement(sql);
             stmt.setString(1, email);
-//            stmt.setString(2, senha);
+            stmt.setString(2, senha);
             rs = stmt.executeQuery();
             if (rs.next()) {
                 //preenche o usuário
@@ -35,9 +39,16 @@ public class UsuarioDAO {
                 usu.setEmail(rs.getString("email"));
                 usu.setSenha(rs.getString("senha"));
                 usu.setDataNasc(rs.getDate("datanasc"));
-//                usu.getImagem(rs.getIcon("imagem"));
+                
+                byte[] bytes = rs.getBytes("imagem");
+                ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+                BufferedImage imagem = ImageIO.read(bis);
+                
+                usu.setImagem(new ImageIcon(imagem));
+                usu.setFuncionario(rs.getBoolean("funcionario"));
+                
             }
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
 
         } finally {

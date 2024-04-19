@@ -14,6 +14,8 @@ public class Usuario {
     private boolean funcionario;
 
     public Usuario() {
+        pkUsuario = 0; 
+        email = "";
     }
 
     public Usuario(long pkUsuario, String nome, String email, String senha, Date dataNasc, boolean funcionario) {

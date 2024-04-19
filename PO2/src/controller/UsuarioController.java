@@ -6,7 +6,6 @@ import model.Usuario;
 import model.UsuarioDAO;
 
 public class UsuarioController {
-
     private UsuarioDAO usuarioDAO;
 
     public UsuarioController() {
@@ -14,14 +13,15 @@ public class UsuarioController {
 
     }
 
-//    public boolean autenticar(String email, String senha) {
-//        if (usuarioDAO.autenticar(email, senha)) {
-//            return true;
-//        } else {
-//            JOptionPane.showMessageDialog(null, "Usuário ou senha incorreto");
-//            return false;
-//        }
-//    }
+    public Usuario autenticar(String email, String senha) {
+        Usuario usu = usuarioDAO.autenticar(email, senha);
+        if (!usu.getEmail().equals("")) {
+            JOptionPane.showMessageDialog(null, "bem-vindo " + usu.getNome() + "!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuário ou senha incorreto");
+        }
+        return usu;
+    }
 
     public boolean adicionarUsuario(Usuario u) {
         if (usuarioDAO.adicionarUsuario(u)) {
