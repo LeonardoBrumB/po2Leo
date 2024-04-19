@@ -51,7 +51,7 @@ public class FRMenu extends javax.swing.JFrame {
         miAreaFuncionario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("menu");
+        setTitle("Menu");
         setLocation(new java.awt.Point(0, 0));
         setSize(new java.awt.Dimension(1920, 1080));
 

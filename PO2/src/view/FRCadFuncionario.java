@@ -63,6 +63,7 @@ public class FRCadFuncionario extends javax.swing.JDialog {
         jLabel6.setText("Senha:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de funcionário");
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 

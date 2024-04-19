@@ -46,6 +46,7 @@ public class FRConsUsuario extends javax.swing.JDialog {
         btAlterar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Consultar usuários");
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 
@@ -95,7 +96,6 @@ public class FRConsUsuario extends javax.swing.JDialog {
         jLabel2.setText("Filtro:");
 
         btVoltar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        btVoltar.setForeground(new java.awt.Color(0, 0, 0));
         btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone voltar.png"))); // NOI18N
         btVoltar.setText("Voltar");
         btVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -105,7 +105,6 @@ public class FRConsUsuario extends javax.swing.JDialog {
         });
 
         btAlterar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        btAlterar.setForeground(new java.awt.Color(0, 0, 0));
         btAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone editar.png"))); // NOI18N
         btAlterar.setText("Alterar");
         btAlterar.addMouseListener(new java.awt.event.MouseAdapter() {

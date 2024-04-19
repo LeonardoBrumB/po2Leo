@@ -73,11 +73,11 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
         lbFoto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Alterar funcionário");
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 
         btDeletar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/3844425_can_trash_icon (1).png"))); // NOI18N
         btDeletar.setText("Deletar");
         btDeletar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -100,7 +100,6 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
         lbTitulo.setText("Alterar de funcionário");
 
         btCancelar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        btCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/326554_cancel_icon.png"))); // NOI18N
         btCancelar.setText("Cancelar");
         btCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -174,7 +173,6 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
         });
 
         btSalvar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        btSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/326688_floppy_save_guardar_icon (1).png"))); // NOI18N
         btSalvar.setText(" Salvar");
         btSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

@@ -51,6 +51,7 @@ public class FRSuporte extends javax.swing.JDialog {
         miAreaFuncionario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Suporte");
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 
