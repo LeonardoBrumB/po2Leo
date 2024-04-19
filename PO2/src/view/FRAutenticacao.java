@@ -197,7 +197,6 @@ public class FRAutenticacao extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSenhaKeyPressed
 
     private void btCadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCadMouseClicked
-        this.dispose();
         new FRCadUsuario(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_btCadMouseClicked
 
@@ -222,15 +221,19 @@ public class FRAutenticacao extends javax.swing.JFrame {
         String hash = utils.Utils.calcularMD5(senha);
 
         UsuarioController controller = new UsuarioController();
-////        Usuario usu = controller.autenticar(txtLogin.getText(), hash);
-//        
-//        if (usu.getFuncionario() == true) {
-//            this.dispose();
-//            new FRMenuFuncionario(this, rootPaneCheckingEnabled).setVisible(true);
-//        } else {
-//            this.dispose();
-//            new FRMenu().setVisible(true);
-//        }
+
+        Usuario usu = controller.autenticar(txtLogin.getText(), hash);
+
+        if (usu.getPkUsuario() > 0) {
+            if (usu.getFuncionario() == false) {
+                this.dispose();
+                new FRMenu().setVisible(true);
+            } else {
+                this.dispose();
+                new FRMenuFuncionario(this, rootPaneCheckingEnabled).setVisible(true);
+            }
+        }
+
     }
 
     /**

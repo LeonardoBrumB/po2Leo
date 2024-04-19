@@ -56,7 +56,7 @@ public class FRCadFuncionario extends javax.swing.JDialog {
         btLogin = new javax.swing.JButton();
         lbConfSenha = new javax.swing.JLabel();
         txtConfSenha = new javax.swing.JPasswordField();
-        lblFoto = new javax.swing.JLabel();
+        lbFoto = new javax.swing.JLabel();
         btnEcolherImagen = new javax.swing.JButton();
 
         jLabel6.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -157,8 +157,8 @@ public class FRCadFuncionario extends javax.swing.JDialog {
             }
         });
 
-        lblFoto.setBackground(new java.awt.Color(204, 204, 204));
-        lblFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbFoto.setBackground(new java.awt.Color(204, 204, 204));
+        lbFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnEcolherImagen.setText("Escolher Imagen");
         btnEcolherImagen.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -179,7 +179,7 @@ public class FRCadFuncionario extends javax.swing.JDialog {
                             .addComponent(lbNome)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(btnEcolherImagen))
                                 .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -189,11 +189,8 @@ public class FRCadFuncionario extends javax.swing.JDialog {
                                 .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lbConfSenha, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtConfSenha, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(lbDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(52, 52, 52))))
+                                .addComponent(lbDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(149, 149, 149))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,7 +208,7 @@ public class FRCadFuncionario extends javax.swing.JDialog {
                 .addComponent(lbTitulo)
                 .addGap(55, 55, 55)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEcolherImagen))
                 .addGap(29, 29, 29)
                 .addComponent(lbNome)
@@ -288,6 +285,7 @@ public class FRCadFuncionario extends javax.swing.JDialog {
         
         Date data = Utils.converterStringToDate(ftxtDataNasc.getText());
         u.setDataNasc(data);
+        u.setImagem(lbFoto.getIcon());
         
         UsuarioController controller = new UsuarioController();
         if (controller.adicionarUsuario(u)) {
@@ -352,7 +350,7 @@ public class FRCadFuncionario extends javax.swing.JDialog {
             Icon icon = Utils.fileParaIcon(arquivo);
             
             ImageIcon iconRedimensionado = Utils.redimensionarIcon(icon, 140, 140);
-            lblFoto.setIcon(iconRedimensionado);
+            lbFoto.setIcon(iconRedimensionado);
         }
     }//GEN-LAST:event_btnEcolherImagenMouseClicked
     
@@ -458,10 +456,10 @@ public class FRCadFuncionario extends javax.swing.JDialog {
     private javax.swing.JLabel lbConfSenha;
     private javax.swing.JLabel lbDataNasc;
     private javax.swing.JLabel lbEmail;
+    private javax.swing.JLabel lbFoto;
     private javax.swing.JLabel lbNome;
     private javax.swing.JLabel lbSenha;
     private javax.swing.JLabel lbTitulo;
-    private javax.swing.JLabel lblFoto;
     private javax.swing.JPasswordField txtConfSenha;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNome;

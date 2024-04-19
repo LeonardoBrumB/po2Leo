@@ -62,8 +62,8 @@ public class FRCadUsuario extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         btSalvar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        btnEcolherImagen1 = new javax.swing.JButton();
+        lbFoto = new javax.swing.JLabel();
+        btnEcolherImagem = new javax.swing.JButton();
         lbNome = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         lbEmail = new javax.swing.JLabel();
@@ -294,12 +294,12 @@ public class FRCadUsuario extends javax.swing.JDialog {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone pessoa.png"))); // NOI18N
         jLabel1.setText("Cadastro de Usuário");
 
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btnEcolherImagen1.setText("Escolher Imagen");
-        btnEcolherImagen1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnEcolherImagem.setText("Escolher Imagen");
+        btnEcolherImagem.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnEcolherImagen1MouseClicked(evt);
+                btnEcolherImagemMouseClicked(evt);
             }
         });
 
@@ -387,17 +387,17 @@ public class FRCadUsuario extends javax.swing.JDialog {
                         .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addComponent(btVoltar)
-                        .addGap(204, 204, 204)
+                        .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(186, 186, 186)
                         .addComponent(btSalvar)))
                 .addGap(126, 126, 126))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(255, 255, 255)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEcolherImagen1))
+                        .addComponent(btnEcolherImagem))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(210, 210, 210)
                         .addComponent(jLabel1)))
@@ -410,8 +410,8 @@ public class FRCadUsuario extends javax.swing.JDialog {
                 .addComponent(jLabel1)
                 .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEcolherImagen1))
+                    .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEcolherImagem))
                 .addGap(33, 33, 33)
                 .addComponent(lbNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -470,11 +470,11 @@ public class FRCadUsuario extends javax.swing.JDialog {
 
         Date data = Utils.converterStringToDate(ftxtDataNasc.getText());
         usu.setDataNasc(data);
+        usu.setImagem(lbFoto.getIcon());
 
         UsuarioController controller = new UsuarioController();
         if (controller.adicionarUsuario(usu)) {
             this.dispose();
-            new FRAutenticacao().setVisible(true);
         }
     }//GEN-LAST:event_btSalvarMouseClicked
 
@@ -568,7 +568,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Escolha um arquivo");
         FileNameExtensionFilter filtro = new FileNameExtensionFilter(
-            "Imagens", "jpg", "jpeg", "png");
+                "Imagens", "jpg", "jpeg", "png");
         fileChooser.setFileFilter(filtro);
 
         fileChooser.setMultiSelectionEnabled(false);
@@ -580,29 +580,9 @@ public class FRCadUsuario extends javax.swing.JDialog {
             Icon icon = Utils.fileParaIcon(arquivo);
 
             ImageIcon iconRedimensionado = Utils.redimensionarIcon(icon, 140, 140);
-            lblFoto.setIcon(iconRedimensionado);
+            lbFoto.setIcon(iconRedimensionado);
         }
     }//GEN-LAST:event_btnEcolherImagenMouseClicked
-
-    private void btnEcolherImagen1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEcolherImagen1MouseClicked
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Escolha um arquivo");
-        FileNameExtensionFilter filtro = new FileNameExtensionFilter(
-            "Imagens", "jpg", "jpeg", "png");
-        fileChooser.setFileFilter(filtro);
-
-        fileChooser.setMultiSelectionEnabled(false);
-
-        int returnValue = fileChooser.showOpenDialog(null);
-
-        if (returnValue == JFileChooser.APPROVE_OPTION) {
-            File arquivo = fileChooser.getSelectedFile();
-            Icon icon = Utils.fileParaIcon(arquivo);
-
-            ImageIcon iconRedimensionado = Utils.redimensionarIcon(icon, 140, 140);
-            lblFoto.setIcon(iconRedimensionado);
-        }
-    }//GEN-LAST:event_btnEcolherImagen1MouseClicked
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
         // TODO add your handling code here:
@@ -645,6 +625,26 @@ public class FRCadUsuario extends javax.swing.JDialog {
     private void btVoltarMouseClicked1(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVoltarMouseClicked1
         this.dispose();
     }//GEN-LAST:event_btVoltarMouseClicked1
+
+    private void btnEcolherImagemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEcolherImagemMouseClicked
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Escolha um arquivo");
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter(
+                "Imagens", "jpg", "jpeg", "png");
+        fileChooser.setFileFilter(filtro);
+
+        fileChooser.setMultiSelectionEnabled(false);
+
+        int returnValue = fileChooser.showOpenDialog(null);
+
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File arquivo = fileChooser.getSelectedFile();
+            Icon icon = Utils.fileParaIcon(arquivo);
+
+            ImageIcon iconRedimensionado = Utils.redimensionarIcon(icon, 140, 140);
+            lbFoto.setIcon(iconRedimensionado);
+        }
+    }//GEN-LAST:event_btnEcolherImagemMouseClicked
 
     private boolean verificarCampos() {
         if (txtNome.getText().equals("")) {
@@ -742,14 +742,13 @@ public class FRCadUsuario extends javax.swing.JDialog {
     private javax.swing.JButton btSalvar;
     private javax.swing.JButton btSalvar1;
     private javax.swing.JButton btVoltar;
+    private javax.swing.JButton btnEcolherImagem;
     private javax.swing.JButton btnEcolherImagen;
-    private javax.swing.JButton btnEcolherImagen1;
     private javax.swing.JCheckBox cbAtivo;
     private javax.swing.JFormattedTextField ftxtDataNasc;
     private javax.swing.JFormattedTextField ftxtDataNasc1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lbConfSenha;
@@ -758,6 +757,7 @@ public class FRCadUsuario extends javax.swing.JDialog {
     private javax.swing.JLabel lbDataNasc1;
     private javax.swing.JLabel lbEmail;
     private javax.swing.JLabel lbEmail1;
+    private javax.swing.JLabel lbFoto;
     private javax.swing.JLabel lbNome;
     private javax.swing.JLabel lbNome1;
     private javax.swing.JLabel lbSenha;
