@@ -48,9 +48,9 @@ public class FRMenu extends javax.swing.JFrame {
         miAgendamento = new javax.swing.JMenuItem();
         miCadSair = new javax.swing.JMenuItem();
         mAjuda = new javax.swing.JMenu();
-        miSobre = new javax.swing.JMenuItem();
+        miAlterarUsuario = new javax.swing.JMenuItem();
         miSuporte = new javax.swing.JMenuItem();
-        miAreaFuncionario = new javax.swing.JMenuItem();
+        miSobre = new javax.swing.JMenuItem();
 
         jInternalFrame1.setVisible(true);
 
@@ -213,18 +213,18 @@ public class FRMenu extends javax.swing.JFrame {
 
         mAjuda.setText("Ajuda");
 
-        miSobre.setText("Sobre");
-        miSobre.addMouseListener(new java.awt.event.MouseAdapter() {
+        miAlterarUsuario.setText("Alterar Usuário");
+        miAlterarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                miSobreMouseClicked(evt);
+                miAlterarUsuarioMouseClicked(evt);
             }
         });
-        miSobre.addActionListener(new java.awt.event.ActionListener() {
+        miAlterarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miSobreActionPerformed(evt);
+                miAlterarUsuarioActionPerformed(evt);
             }
         });
-        mAjuda.add(miSobre);
+        mAjuda.add(miAlterarUsuario);
 
         miSuporte.setText("Suporte");
         miSuporte.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -239,18 +239,18 @@ public class FRMenu extends javax.swing.JFrame {
         });
         mAjuda.add(miSuporte);
 
-        miAreaFuncionario.setText("Área do funcionário");
-        miAreaFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
+        miSobre.setText("Sobre");
+        miSobre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                miAreaFuncionarioMouseClicked(evt);
+                miSobreMouseClicked(evt);
             }
         });
-        miAreaFuncionario.addActionListener(new java.awt.event.ActionListener() {
+        miSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miAreaFuncionarioActionPerformed(evt);
+                miSobreActionPerformed(evt);
             }
         });
-        mAjuda.add(miAreaFuncionario);
+        mAjuda.add(miSobre);
 
         jMenuBar1.add(mAjuda);
 
@@ -277,18 +277,6 @@ public class FRMenu extends javax.swing.JFrame {
     private void miSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSobreActionPerformed
         new FRSobre(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miSobreActionPerformed
-
-    private void miAreaFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miAreaFuncionarioMouseClicked
-        this.dispose();
-        new FRLoginCons(this, rootPaneCheckingEnabled).setVisible(true);
-
-    }//GEN-LAST:event_miAreaFuncionarioMouseClicked
-
-    private void miAreaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAreaFuncionarioActionPerformed
-        this.dispose();
-        new FRLoginCons(this, rootPaneCheckingEnabled).setVisible(true);
-
-    }//GEN-LAST:event_miAreaFuncionarioActionPerformed
 
     private void miConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miConsultasActionPerformed
         this.dispose();
@@ -330,6 +318,14 @@ public class FRMenu extends javax.swing.JFrame {
 //        lbDataNasc.setText(usu.getDataNasc());
 //        lbFoto.setIcon(usu.getImagem);
     }//GEN-LAST:event_lbNomeMouseClicked
+
+    private void miAlterarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miAlterarUsuarioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miAlterarUsuarioMouseClicked
+
+    private void miAlterarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAlterarUsuarioActionPerformed
+        new FRUPDUsuario(null, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miAlterarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -383,7 +379,7 @@ public class FRMenu extends javax.swing.JFrame {
     private javax.swing.JMenu mAjuda;
     private javax.swing.JMenu mMenu;
     private javax.swing.JMenuItem miAgendamento;
-    private javax.swing.JMenuItem miAreaFuncionario;
+    private javax.swing.JMenuItem miAlterarUsuario;
     private javax.swing.JMenuItem miCadSair;
     private javax.swing.JMenuItem miConsultas;
     private javax.swing.JMenuItem miSobre;
