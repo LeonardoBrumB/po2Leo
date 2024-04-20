@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import model.Usuario;
 import utils.Utils;
+import static utils.Utils.converterDateToString;
 
 /**
  *
@@ -557,10 +558,11 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
 
         String codigo = String.valueOf(usu.getPkUsuario());
 
+        lbFoto.setIcon(usu.getImagem());
         txtCodigo.setText(codigo);
         txtNome.setText(usu.getNome());
         txtEmail.setText(usu.getEmail());
-        ftxtDataNasc.setText(Utils.converterDateToString(usu.getDataNasc()));
+        ftxtDataNasc.setText(converterDateToString(usu.getDataNasc()));
         txtSenha.setText(usu.getSenha());
         txtConfSenha.setText(usu.getSenha());
         setSenhaUsuario(usu.getSenha());

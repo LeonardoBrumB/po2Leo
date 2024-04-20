@@ -179,8 +179,14 @@ public class UsuarioDAO {
                 usuario.setEmail(rs.getString("email"));
                 usuario.setSenha(rs.getString("senha"));
                 usuario.setDataNasc(rs.getDate("datanasc"));
+                
+                byte[] bytes = rs.getBytes("imagem");
+                ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+                BufferedImage imagem = ImageIO.read(bis);
+                
+                usuario.setImagem(new ImageIcon(imagem));
             }
-        } catch (SQLException ex) {
+        } catch (SQLException | IOException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
 
         } finally {

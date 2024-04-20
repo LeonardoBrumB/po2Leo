@@ -72,10 +72,8 @@
                                       <Component id="txtSenha" alignment="0" max="32767" attributes="0"/>
                                       <Component id="lbConfSenha" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtConfSenha" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="lbDataNasc" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="ftxtDataNasc" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="lbDataNasc" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="ftxtDataNasc" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
                                       <Component id="txtNome" alignment="0" min="-2" pref="443" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
