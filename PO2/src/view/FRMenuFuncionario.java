@@ -5,12 +5,8 @@
  */
 package view;
 
-import java.io.File;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import utils.Utils;
+import model.Usuario;
+import static utils.Utils.converterDateToString;
 
 /**
  *
@@ -263,13 +259,14 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
     }//GEN-LAST:event_miCadFuncionarioActionPerformed
 
     private void lbNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbNomeMouseClicked
-        //        Usuario usu = new Usuario();
-        //
-        //        lbNome.setText(usu.getNome());
-        //        lbEmail.setText(usu.getEmail());
-        //        lbDataNasc.setText(usu.getDataNasc());
-        //        lbFoto.setIcon(usu.getImagem);
+
     }//GEN-LAST:event_lbNomeMouseClicked
+    public void carregarUsuario(Usuario usu) {
+        lbNome.setText(usu.getNome());
+        lbEmail.setText(usu.getEmail());
+        lbDataNasc.setText(converterDateToString(usu.getDataNasc()));
+        lbFoto.setIcon(usu.getImagem());
+    }
 
     /**
      * @param args the command line arguments

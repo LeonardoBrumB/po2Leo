@@ -2,6 +2,7 @@ package model;
 
 import java.util.Date;
 import javax.swing.Icon;
+import static utils.Utils.converterDateToString;
 
 public class Usuario {
 
@@ -82,5 +83,6 @@ public class Usuario {
     public void setImagem(Icon imagem) {
         this.imagem = imagem;
     }
+    
 
 }

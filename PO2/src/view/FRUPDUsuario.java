@@ -12,6 +12,7 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import model.Usuario;
 import utils.Utils;
+import static utils.Utils.converterDateToString;
 
 /**
  *
@@ -509,6 +510,22 @@ public class FRUPDUsuario extends javax.swing.JDialog {
 
         return true;
 
+    }
+
+    public void carregarUsuario() {
+        UsuarioController controller = new UsuarioController();
+        Usuario usu = controller.readForPk(pkUsuario);
+
+        String codigo = String.valueOf(usu.getPkUsuario());
+
+        lbFoto.setIcon(usu.getImagem());
+        txtCodigo.setText(codigo);
+        txtNome.setText(usu.getNome());
+        txtEmail.setText(usu.getEmail());
+        ftxtDataNasc.setText(converterDateToString(usu.getDataNasc()));
+        txtSenha.setText(usu.getSenha());
+        txtConfSenha.setText(usu.getSenha());
+        setSenhaUsuario(usu.getSenha());
     }
 
     /**

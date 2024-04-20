@@ -46,7 +46,7 @@ public class Utils {
         try {
             data = f.parse(texto);
         } catch (ParseException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao converter a data");
+            JOptionPane.showMessageDialog(null, "Erro ao converter a data STD");
         }
         return data;
     }
@@ -59,7 +59,7 @@ public class Utils {
             texto = formato.format(data);
 
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao converter a data.");
+            JOptionPane.showMessageDialog(null, "Erro ao converter a data. DTS");
         }
         return texto;
     }
