@@ -279,22 +279,18 @@ public class FRMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_miSobreActionPerformed
 
     private void miConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miConsultasActionPerformed
-        this.dispose();
         new FRConsultas(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miConsultasActionPerformed
 
     private void miConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miConsultasMouseClicked
-        this.dispose();
         new FRConsultas(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miConsultasMouseClicked
 
     private void miAgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAgendamentoActionPerformed
-        this.dispose();
         new FRAgendamento(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miAgendamentoActionPerformed
 
     private void miAgendamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miAgendamentoMouseClicked
-        this.dispose();
         new FRAgendamento(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miAgendamentoMouseClicked
 
