@@ -63,11 +63,11 @@ public class FRConsUsuario extends javax.swing.JDialog {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Código", "Nome", "Email", "Data de nascimento", "Ativo"
+                "Código", "Nome", "Email", "Data de nascimento", "Funcionario"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
@@ -203,16 +203,18 @@ public class FRConsUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_btAlterarActionPerformed
 
     private void btAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAlterarMouseClicked
-        if(tbUsuario.getSelectedRow() != -1){
+        if (tbUsuario.getSelectedRow() != -1) {
             int pk = Integer.parseInt(tbUsuario.getValueAt(tbUsuario.getSelectedRow(), 0).toString());
-            
-            //Criar tela e carregar os dados do usuário
-            FRUPDFuncionario telaUPD = new FRUPDFuncionario(null, rootPaneCheckingEnabled);
-            telaUPD.setPkUsuario(pk);
-            telaUPD.carregarUsuario();
-            telaUPD.setVisible(true);
-            
-            pesquisar();
+
+            Usuario usu = new Usuario();
+            if (usu.getFuncionario() == true) {
+                FRUPDFuncionario telaUPD = new FRUPDFuncionario(null, rootPaneCheckingEnabled);
+                telaUPD.setPkUsuario(pk);
+                telaUPD.carregarUsuario();
+                telaUPD.setVisible(true);
+                pesquisar();
+            } else {
+            }
         }
     }//GEN-LAST:event_btAlterarMouseClicked
 
@@ -222,10 +224,10 @@ public class FRConsUsuario extends javax.swing.JDialog {
         UsuarioController controller = new UsuarioController();
 
         for (Usuario usu : controller.readForDesc(cbFiltro.getSelectedIndex(), txtFiltro.getText())) {
-            Object[] linha = {usu.getPkUsuario()
-            , usu.getNome()
-            , usu.getEmail()
-            , Utils.converterDateToString(usu.getDataNasc())};
+            Object[] linha = {usu.getPkUsuario(),
+                usu.getNome(),
+                usu.getEmail(),
+                Utils.converterDateToString(usu.getDataNasc())};
             modelo.addRow(linha);
         }
     }
