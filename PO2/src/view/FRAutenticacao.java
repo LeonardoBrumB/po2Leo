@@ -226,6 +226,7 @@ public class FRAutenticacao extends javax.swing.JFrame {
 
         if (usu.getPkUsuario() > 0) {
             if (usu.getFuncionario() == false) {
+                this.dispose();
                 FRMenu telaFunc = new FRMenu();
                 telaFunc.carregarUsuario(usu);
                 telaFunc.setVisible(true);

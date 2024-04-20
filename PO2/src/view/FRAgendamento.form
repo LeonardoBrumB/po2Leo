@@ -9,15 +9,6 @@
             <Property name="text" type="java.lang.String" value="Menu"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="miPagInicial">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Pagina inicial"/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="miPagInicialMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miPagInicialActionPerformed"/>
-              </Events>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="miConsultas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consultas"/>
@@ -59,6 +50,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Suporte"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="miSuporteMouseClicked"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="miAreaFuncionario">
               <Properties>

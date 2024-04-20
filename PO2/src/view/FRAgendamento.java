@@ -17,6 +17,7 @@ public class FRAgendamento extends javax.swing.JDialog {
     public FRAgendamento(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -38,7 +39,6 @@ public class FRAgendamento extends javax.swing.JDialog {
         jLabel7 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mMenu = new javax.swing.JMenu();
-        miPagInicial = new javax.swing.JMenuItem();
         miConsultas = new javax.swing.JMenuItem();
         miSair = new javax.swing.JMenuItem();
         mAjuda = new javax.swing.JMenu();
@@ -124,19 +124,6 @@ public class FRAgendamento extends javax.swing.JDialog {
 
         mMenu.setText("Menu");
 
-        miPagInicial.setText("Pagina inicial");
-        miPagInicial.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                miPagInicialMouseClicked(evt);
-            }
-        });
-        miPagInicial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miPagInicialActionPerformed(evt);
-            }
-        });
-        mMenu.add(miPagInicial);
-
         miConsultas.setText("Consultas");
         miConsultas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -186,6 +173,11 @@ public class FRAgendamento extends javax.swing.JDialog {
         mAjuda.add(miSobre);
 
         miSuporte.setText("Suporte");
+        miSuporte.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miSuporteMouseClicked(evt);
+            }
+        });
         mAjuda.add(miSuporte);
 
         miAreaFuncionario.setText("Área do funcionário");
@@ -228,16 +220,6 @@ public class FRAgendamento extends javax.swing.JDialog {
         new FRConsultas(null, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miConsultasMouseClicked
 
-    private void miPagInicialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miPagInicialMouseClicked
-        this.dispose();
-        new FRMenu().setVisible(true);
-    }//GEN-LAST:event_miPagInicialMouseClicked
-
-    private void miPagInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miPagInicialActionPerformed
-        this.dispose();
-        new FRMenu().setVisible(true);
-    }//GEN-LAST:event_miPagInicialActionPerformed
-
     private void miSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miSairMouseClicked
         this.dispose();
     }//GEN-LAST:event_miSairMouseClicked
@@ -259,6 +241,10 @@ public class FRAgendamento extends javax.swing.JDialog {
     private void miSobreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miSobreMouseClicked
         new FRSobre(null, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miSobreMouseClicked
+
+    private void miSuporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miSuporteMouseClicked
+        new FRSuporte(null, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miSuporteMouseClicked
 
     /**
      * @param args the command line arguments
@@ -316,7 +302,6 @@ public class FRAgendamento extends javax.swing.JDialog {
     private javax.swing.JMenu mMenu;
     private javax.swing.JMenuItem miAreaFuncionario;
     private javax.swing.JMenuItem miConsultas;
-    private javax.swing.JMenuItem miPagInicial;
     private javax.swing.JMenuItem miSair;
     private javax.swing.JMenuItem miSobre;
     private javax.swing.JMenuItem miSuporte;

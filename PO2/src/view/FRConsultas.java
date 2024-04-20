@@ -97,7 +97,6 @@ public class FRConsultas extends javax.swing.JDialog {
         jLabel11 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         miMenu = new javax.swing.JMenu();
-        miPagInicial = new javax.swing.JMenuItem();
         miAgendamento = new javax.swing.JMenuItem();
         miSair = new javax.swing.JMenuItem();
         mAjuda = new javax.swing.JMenu();
@@ -357,7 +356,7 @@ public class FRConsultas extends javax.swing.JDialog {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 4, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -682,7 +681,7 @@ public class FRConsultas extends javax.swing.JDialog {
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addContainerGap())
             .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -888,19 +887,6 @@ public class FRConsultas extends javax.swing.JDialog {
 
         miMenu.setText("Menu");
 
-        miPagInicial.setText("Pagina Inicial");
-        miPagInicial.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                miPagInicialMouseClicked(evt);
-            }
-        });
-        miPagInicial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miPagInicialActionPerformed(evt);
-            }
-        });
-        miMenu.add(miPagInicial);
-
         miAgendamento.setText("Agendamento");
         miAgendamento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -945,6 +931,11 @@ public class FRConsultas extends javax.swing.JDialog {
         mAjuda.add(miSobre);
 
         miSuporte.setText("Suporte");
+        miSuporte.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miSuporteMouseClicked(evt);
+            }
+        });
         mAjuda.add(miSuporte);
 
         miAreaFuncionario.setText("Área do funcionário");
@@ -977,16 +968,6 @@ public class FRConsultas extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void miPagInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miPagInicialActionPerformed
-        this.dispose();
-        new FRMenu().setVisible(true);
-    }//GEN-LAST:event_miPagInicialActionPerformed
-
-    private void miPagInicialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miPagInicialMouseClicked
-        this.dispose();
-        new FRMenu().setVisible(true);
-    }//GEN-LAST:event_miPagInicialMouseClicked
 
     private void miAgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAgendamentoActionPerformed
         this.dispose();
@@ -1068,6 +1049,10 @@ public class FRConsultas extends javax.swing.JDialog {
         new FRAgendamento(null, rootPaneCheckingEnabled).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgendar09ActionPerformed
+
+    private void miSuporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miSuporteMouseClicked
+        new FRSuporte(null, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miSuporteMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1182,7 +1167,6 @@ public class FRConsultas extends javax.swing.JDialog {
     private javax.swing.JMenuItem miAgendamento;
     private javax.swing.JMenuItem miAreaFuncionario;
     private javax.swing.JMenu miMenu;
-    private javax.swing.JMenuItem miPagInicial;
     private javax.swing.JMenuItem miSair;
     private javax.swing.JMenuItem miSobre;
     private javax.swing.JMenuItem miSuporte;

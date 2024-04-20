@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aluno.saolucas
@@ -73,6 +75,11 @@ public class FRSuporte extends javax.swing.JDialog {
 
         btEnviar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btEnviar.setText("Enviar");
+        btEnviar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btEnviarMouseClicked(evt);
+            }
+        });
 
         btCancelar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btCancelar.setText("Cancelar");
@@ -289,6 +296,56 @@ public class FRSuporte extends javax.swing.JDialog {
     private void btCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCancelarMouseClicked
         this.dispose();
     }//GEN-LAST:event_btCancelarMouseClicked
+
+    private void btEnviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEnviarMouseClicked
+        enviar();
+    }//GEN-LAST:event_btEnviarMouseClicked
+
+    private boolean verificarCampos() {
+        if (txtNome.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Campo 'Nome' está em branco.");
+            return false;
+
+        }
+        if (!txtNome.getText().matches("^[\\p{L} ]+$")) {
+            JOptionPane.showMessageDialog(null, "Campo 'Nome' possui caracteres inválidos.");
+            return false;
+
+        }
+        if (txtEmail.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Campo 'Email' está em branco.");
+            return false;
+
+        }
+        if (!txtEmail.getText().matches("^[a-zA-Z._]+@[a-zA-Z._]+.[a-zA-Z._]+$")) {
+            JOptionPane.showMessageDialog(null, "Campo 'Email' Possui formato inválido.");
+            return false;
+
+        }
+        if (txtaProblema.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Campo 'Problema' está em branco.");
+            return false;
+
+        }
+        if (!txtaProblema.getText().matches("^[\\p{L} ]+$")) {
+            JOptionPane.showMessageDialog(null, "Campo 'Mensagem' possui caracteres inválidos.");
+            return false;
+
+        }
+
+        return true;
+
+    }
+
+    public void enviar() {
+        if(verificarCampos()== true){
+             JOptionPane.showMessageDialog(null, "Mensagem enviada!");
+             this.dispose();
+        }
+        
+       
+        
+    }
 
     /**
      * @param args the command line arguments
