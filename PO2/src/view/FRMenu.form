@@ -57,7 +57,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="mAjuda">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ajuda"/>
+            <Property name="text" type="java.lang.String" value="Op&#xe7;&#xf5;es"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="miAlterarUsuario">

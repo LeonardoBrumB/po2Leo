@@ -59,7 +59,6 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btDeletar = new javax.swing.JButton();
         lbTitulo = new javax.swing.JLabel();
         btCancelar = new javax.swing.JButton();
         lbNome = new javax.swing.JLabel();
@@ -73,8 +72,6 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
         txtSenha = new javax.swing.JPasswordField();
         ftxtDataNasc = new javax.swing.JFormattedTextField();
         btSalvar = new javax.swing.JButton();
-        lbCodigo = new javax.swing.JLabel();
-        txtCodigo = new javax.swing.JTextField();
         btAlterarSenha = new javax.swing.JButton();
         lbFoto = new javax.swing.JLabel();
         brnAlterarFunc = new javax.swing.JButton();
@@ -84,27 +81,9 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(0, 235, 239));
 
-        btDeletar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        btDeletar.setText("Deletar");
-        btDeletar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btDeletarMouseClicked(evt);
-            }
-        });
-        btDeletar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btDeletarActionPerformed(evt);
-            }
-        });
-        btDeletar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btDeletarKeyPressed(evt);
-            }
-        });
-
         lbTitulo.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         lbTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icone editar usuario.png"))); // NOI18N
-        lbTitulo.setText("Alterar de funcionário");
+        lbTitulo.setText("Alterar usuário");
 
         btCancelar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btCancelar.setText("Cancelar");
@@ -197,22 +176,6 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
             }
         });
 
-        lbCodigo.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lbCodigo.setText("Código:");
-
-        txtCodigo.setEditable(false);
-        txtCodigo.setBackground(new java.awt.Color(124, 124, 124));
-        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoActionPerformed(evt);
-            }
-        });
-        txtCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtCodigoKeyPressed(evt);
-            }
-        });
-
         btAlterarSenha.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         btAlterarSenha.setText("Alterar senha");
         btAlterarSenha.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -240,64 +203,47 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
+                .addContainerGap(87, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbNome)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(btCancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(124, 124, 124))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(129, 129, 129)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbNome)
+                            .addComponent(lbTitulo)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lbCodigo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(lbEmail, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbSenha, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbConfSenha, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtConfSenha, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(lbDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btAlterarSenha)))
-                        .addGap(29, 29, 29))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(192, 192, 192)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbTitulo)
+                                .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)
+                                .addComponent(brnAlterarFunc))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(brnAlterarFunc)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(btCancelar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbSenha, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbConfSenha, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtConfSenha, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ftxtDataNasc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btAlterarSenha)))
+                .addGap(27, 27, 27))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
+                .addComponent(lbTitulo)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbTitulo)
-                        .addGap(28, 28, 28)
-                        .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(brnAlterarFunc))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbCodigo, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(39, 39, 39)
                 .addComponent(lbNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -318,15 +264,12 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
                 .addGap(8, 8, 8)
                 .addComponent(lbDataNasc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(ftxtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btDeletar)
-                        .addComponent(btSalvar)
-                        .addComponent(btCancelar)))
-                .addGap(37, 37, 37))
+                .addComponent(ftxtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btSalvar)
+                    .addComponent(btCancelar))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -337,31 +280,13 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 69, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btDeletarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDeletarMouseClicked
-        int resposta = JOptionPane.showConfirmDialog(null, "Deseja excluir o usuário?",
-                "Confirmação", JOptionPane.YES_NO_OPTION);
-        if (resposta == JOptionPane.YES_NO_OPTION) {
-            UsuarioController controller = new UsuarioController();
-            if (controller.excluirUsuario(pkUsuario)) {
-                this.dispose();
-            }
-        }
-
-    }//GEN-LAST:event_btDeletarMouseClicked
-
-    private void btDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btDeletarActionPerformed
-
-    private void btDeletarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btDeletarKeyPressed
-
-    }//GEN-LAST:event_btDeletarKeyPressed
 
     private void btCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCancelarMouseClicked
         this.dispose();
@@ -449,14 +374,6 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
             btSalvarMouseClicked(null);
         }
     }//GEN-LAST:event_btSalvarKeyPressed
-
-    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoActionPerformed
-
-    private void txtCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoKeyPressed
 
     private void btAlterarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarSenhaActionPerformed
         // TODO add your handling code here:
@@ -559,7 +476,6 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
         String codigo = String.valueOf(usu.getPkUsuario());
 
         lbFoto.setIcon(usu.getImagem());
-        txtCodigo.setText(codigo);
         txtNome.setText(usu.getNome());
         txtEmail.setText(usu.getEmail());
         ftxtDataNasc.setText(converterDateToString(usu.getDataNasc()));
@@ -615,11 +531,9 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
     private javax.swing.JButton brnAlterarFunc;
     private javax.swing.JButton btAlterarSenha;
     private javax.swing.JButton btCancelar;
-    private javax.swing.JButton btDeletar;
     private javax.swing.JButton btSalvar;
     private javax.swing.JFormattedTextField ftxtDataNasc;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lbCodigo;
     private javax.swing.JLabel lbConfSenha;
     private javax.swing.JLabel lbDataNasc;
     private javax.swing.JLabel lbEmail;
@@ -627,7 +541,6 @@ public class FRUPDFuncionario extends javax.swing.JDialog {
     private javax.swing.JLabel lbNome;
     private javax.swing.JLabel lbSenha;
     private javax.swing.JLabel lbTitulo;
-    private javax.swing.JTextField txtCodigo;
     private javax.swing.JPasswordField txtConfSenha;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNome;

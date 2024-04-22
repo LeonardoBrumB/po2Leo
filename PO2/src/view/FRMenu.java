@@ -211,7 +211,7 @@ public class FRMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(mMenu);
 
-        mAjuda.setText("Ajuda");
+        mAjuda.setText("Opções");
 
         miAlterarUsuario.setText("Alterar Usuário");
         miAlterarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -306,21 +306,22 @@ public class FRMenu extends javax.swing.JFrame {
         new FRSuporte(null, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_miSuporteMouseClicked
 
+    private void miAlterarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAlterarUsuarioActionPerformed
+        new FRUPDFuncionario(null, rootPaneCheckingEnabled).setVisible(true);
+    }//GEN-LAST:event_miAlterarUsuarioActionPerformed
+
+    private void miAlterarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miAlterarUsuarioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miAlterarUsuarioMouseClicked
+
     public void carregarUsuario(Usuario usu) {
         lbNome.setText(usu.getNome());
         lbEmail.setText(usu.getEmail());
         lbDataNasc.setText(converterDateToString(usu.getDataNasc()));
         lbFoto.setIcon(usu.getImagem());
     }
-
-    private void miAlterarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miAlterarUsuarioMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_miAlterarUsuarioMouseClicked
-
-    private void miAlterarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAlterarUsuarioActionPerformed
-        new FRUPDUsuario(null, rootPaneCheckingEnabled).setVisible(true);
-    }//GEN-LAST:event_miAlterarUsuarioActionPerformed
-
+          
+    
     /**
      * @param args the command line arguments
      */

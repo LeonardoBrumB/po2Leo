@@ -42,7 +42,6 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mMenu = new javax.swing.JMenu();
-        miMenuInicial = new javax.swing.JMenuItem();
         miSair = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         miConsUsuario = new javax.swing.JMenuItem();
@@ -134,19 +133,6 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
 
         mMenu.setText("Menu");
 
-        miMenuInicial.setText("Menu Inicial");
-        miMenuInicial.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                miMenuInicialMouseClicked(evt);
-            }
-        });
-        miMenuInicial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miMenuInicialActionPerformed(evt);
-            }
-        });
-        mMenu.add(miMenuInicial);
-
         miSair.setText("Sair");
         miSair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -187,7 +173,7 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
 
         jMenuBar1.add(jMenu1);
 
-        mAjuda.setText("Ajuda");
+        mAjuda.setText("Opções");
 
         miSobre.setText("Sobre");
         miSobre.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -219,16 +205,6 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void miMenuInicialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miMenuInicialMouseClicked
-        this.dispose();
-        new FRMenu().setVisible(true);
-    }//GEN-LAST:event_miMenuInicialMouseClicked
-
-    private void miMenuInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMenuInicialActionPerformed
-        this.dispose();
-        new FRMenu().setVisible(true);
-    }//GEN-LAST:event_miMenuInicialActionPerformed
 
     private void miSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSairActionPerformed
         this.dispose();
@@ -325,7 +301,6 @@ public class FRMenuFuncionario extends javax.swing.JDialog {
     private javax.swing.JMenu mMenu;
     private javax.swing.JMenuItem miCadFuncionario;
     private javax.swing.JMenuItem miConsUsuario;
-    private javax.swing.JMenuItem miMenuInicial;
     private javax.swing.JMenuItem miSair;
     private javax.swing.JMenuItem miSobre;
     // End of variables declaration//GEN-END:variables
