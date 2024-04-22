@@ -57,20 +57,20 @@ public class FRConsUsuario extends javax.swing.JDialog {
 
         tbUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Código", "Nome", "Email", "Data de nascimento", "Funcionario"
+                "Código", "Nome", "Email", "Data de nascimento"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -206,15 +206,11 @@ public class FRConsUsuario extends javax.swing.JDialog {
         if (tbUsuario.getSelectedRow() != -1) {
             int pk = Integer.parseInt(tbUsuario.getValueAt(tbUsuario.getSelectedRow(), 0).toString());
 
-            Usuario usu = new Usuario();
-            if (usu.getFuncionario() == true) {
-                FRUPDFuncionario telaUPD = new FRUPDFuncionario(null, rootPaneCheckingEnabled);
-                telaUPD.setPkUsuario(pk);
-                telaUPD.carregarUsuario();
-                telaUPD.setVisible(true);
-                pesquisar();
-            } else {
-            }
+            FRUPDFuncionario telaUPD = new FRUPDFuncionario(null, rootPaneCheckingEnabled);
+            telaUPD.setPkUsuario(pk);
+            telaUPD.carregarUsuario();
+            telaUPD.setVisible(true);
+            pesquisar();
         }
     }//GEN-LAST:event_btAlterarMouseClicked
 
